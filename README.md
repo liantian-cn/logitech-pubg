@@ -9,6 +9,8 @@ PUBG no-recoil script for Logitech gaming mouse
 
 - 解除 45678 ，5个鼠标按键的功能，具体哪个按键是几号，可以在编辑脚本下方的日志看到。
 
+- 如果把射击按键绑定为键盘按键左，并取消鼠标左键在游戏内的绑定。
+
 功能：
 
 - 6号键开关功能
@@ -21,5 +23,4 @@ PUBG no-recoil script for Logitech gaming mouse
 - 8号：UMP9
 SCAR-L = M4
 
-如果把射击按键绑定为键盘按键左，则可实现自动点射，更强。
-如果不绑定，需要把键盘方向按键左修改为无绑定。
+
