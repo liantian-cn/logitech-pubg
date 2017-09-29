@@ -1,3 +1,6 @@
+--- 简易版不需要修改游戏键位
+--- 只使用鼠标上的4、5、6三个按键
+
 EnablePrimaryMouseButtonEvents (true)
 local step = 2.0
 function OnEvent(event, arg)
