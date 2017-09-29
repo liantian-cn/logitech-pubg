@@ -22,7 +22,6 @@ recoil_table["ump9"] = {
 
 -------------------------------------------------------------------------------------------------------
 local weapon = "none"
-local click_enbale = false
 
 -------------------------------------------------------------------------------------------------------
 function recoil_value(_weapon,_mode,_shotTime)
@@ -55,7 +54,6 @@ function OnEvent(event, arg)
         EnablePrimaryMouseButtonEvents(true)
     elseif event == "PROFILE_DEACTIVATED" then
         weapon = "none"
-        click_enbale = false
         ReleaseKey("Left")
         ReleaseMouseButton(1)
     end
