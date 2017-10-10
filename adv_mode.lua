@@ -53,10 +53,8 @@ end
 function recoil_mode()
     if IsKeyLockOn("capslock") then
       return "x4"
-    elseif IsKeyLockOn("numlock") then
-      return "base"
     else
-      return "all"
+      return "base"
     end
 end 
 
