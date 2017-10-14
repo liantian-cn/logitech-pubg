@@ -128,7 +128,7 @@ function OnEvent(event, arg)
     if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) then
         current_weapon = "none"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key) then
-        current_weapon = "akm_key"
+        current_weapon = "akm"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key) then
         current_weapon = "m16a4"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key) then
@@ -166,7 +166,7 @@ function OnEvent(event, arg)
             shoot_duration = shoot_duration + current_weapon_intervals
             OutputLogMessage("--------------------------\n")
         until not IsMouseButtonPressed(1)
-        -- 松开前循环
+        
     end
 
 end
