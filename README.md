@@ -10,6 +10,7 @@ PUBG no-recoil script for Logitech gaming mouse
 
 - click PUNG in LGS, select `Scripting`.
   点击pubg，选择编写脚本
+
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103015.png)![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103649.png)
 
 
