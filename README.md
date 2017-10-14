@@ -45,7 +45,7 @@ PUBG no-recoil script for Logitech gaming mouse
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014104238.png)
   
-#### Assigned button number for weapon / 为枪械分配按键编号
+#### 1. Assigned button number for weapon / 为枪械分配按键编号
 
 - the button number can be find in log windows, when the mouse button click, log prompt `event = MOUSE_BUTTON_RELEASED, arg = X`, the X is the button number.
 - Weapon has 6 kinds, and different models of Logitech mouse function keys may be less than 6, for unnecessary weapons allocation `nil` value.
@@ -56,7 +56,7 @@ PUBG no-recoil script for Logitech gaming mouse
 - 总是应该为取消设置后座力补偿分配一个按键。`set_off_key`
 
 
-#### Set the fire key and the mode switch key. / 设置开火按键和模式切换按键
+#### 2. Set the fire key and the mode switch key. / 设置开火按键和模式切换按键
 
 
 - the `fire key` button needs to be consistent with the game settings, and in the game to cancel the left mouse button binding.
@@ -71,9 +71,9 @@ PUBG no-recoil script for Logitech gaming mouse
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014110324.png)
 
 
-#### You should always use Ctrl + S to save script after edit script. / 编辑脚本后记得ctrl + s保存。
+#### 3. You should always use Ctrl + S to save script after edit script. / 编辑脚本后记得ctrl + s保存。
 
-
+#### 4. All weapons use the single-shot model, which converts the individual into a fully automated mode, including M16a1. / 所有武器使用单发模式，这个脚本会将单发转化为全自动模式，包括M16a1
 
 ## Recommended settings / 推荐设置
 
@@ -94,3 +94,4 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 - Assign a button to use a big jump.
 - Assign a button  to cancel the no-recoil.
 
+![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014153403.png)
