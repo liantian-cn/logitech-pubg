@@ -3,6 +3,22 @@ PUBG no-recoil script for Logitech gaming mouse
 
 (English translation part comes from google)
 
+
+## ChangeLog / 更新说明
+
+2017.10.14 
+
+- 新增了uzi 和 scar-l 的后座力表格。
+- 默认开火键修改为"pause"
+- 移除了全配件模式，因为使用机会太小，导致缺乏测试。
+- 重写了逻辑：现在激发速度和武器射速相关。
+
+
+- Added uzi and scar-l backrest table.
+- The default fire button is changed to "pause".
+- Removed the full part mode because the chances of using are too small, resulting in a lack of testing.
+- Rewriting the logic: now the excitation speed is related to the weapon firing rate.
+
 ## How To Use / 食用说明
 
 - download and install `logitech gaming software`[LGS]
@@ -56,3 +72,25 @@ PUBG no-recoil script for Logitech gaming mouse
 
 
 #### You should always use Ctrl + S to save script after edit script. / 编辑脚本后记得ctrl + s保存。
+
+
+
+## Recommended settings / 推荐设置
+
+罗技的大多数游戏鼠标包含5个快捷键。默认1个前进、1个后退、1个放大dpi，一个缩小dpi，一个放大镜。
+
+- 分配一个按键使用ump9，这样按键同时也适合全配件的m416和scar-l.
+- 分配一个按键使用m16a1, m16a1搭配红点瞄准镜或全息瞄准镜，不需要其他配件，就可以发挥威力。
+- 分配一个按键使用akm，akm的模式同样适用于sks和mini 14.
+- 分配一个按键使用大跳。
+- 分配一个给取消后座力补偿。
+
+
+Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 1 zoom, a reduced dpi, a magnifying glass.
+
+- Assign a button to use ump9, so that the keys are also suitable for full accessory m416 and scar-l.
+- Assign a button to use m16a1, m16a1 with red dot sight or holographic sight, do not need other accessories, you can play a power.
+- Assign a button using akm, akm mode also applies to sks and mini 14.
+- Assign a button to use a big jump.
+- Assign a button  to cancel the no-recoil.
+
