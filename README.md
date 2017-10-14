@@ -45,3 +45,6 @@ PUBG no-recoil script for Logitech gaming mouse
   模式切换键按下时，后座力放大3~4倍，便于使用四倍镜。
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014110324.png)
+
+
+#### You should always use Ctrl + S to save script after edit script. / 编辑脚本后记得ctrl + s保存。
