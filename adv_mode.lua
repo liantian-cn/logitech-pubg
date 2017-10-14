@@ -35,7 +35,7 @@ local mode_switch_key = "capslock"
 --- Sensitivity in Game
 --- default is 50.0
 
-local general_sensitivity = 50.0
+local target_sensitivity = 50.0
 local scope_sensitivity = 50.0
 local scope4x_sensitivity = 50.0
 
@@ -172,7 +172,7 @@ function OnEvent(event, arg)
 
             -- issues/3
             if IsMouseButtonPressed(2) then
-                recoil_recovery = recoil_recovery / (general_sensitivity / 50.0)
+                recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
             elseif recoil_mode() == "basic" then
                 recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
             elseif recoil_mode() == "quadruple" then
