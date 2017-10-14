@@ -29,6 +29,7 @@ local set_off_key = 6
 ---- fire key ----
 
 local fire_key = "Pause"
+local mode_switch_key = "capslock"
 
 ---- Shooting delay setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
@@ -91,7 +92,7 @@ recoil_table["none"] = {
 --------------------------------------------------------------------------
 
 function recoil_mode()
-    if IsKeyLockOn("capslock") then
+    if IsKeyLockOn(mode_switch_key) then
         return "quadruple"
     else
         return "basic"
