@@ -85,6 +85,9 @@ PUBG no-recoil script for Logitech gaming mouse
 
 #### 4. All weapons use the single-shot model, which converts the individual into a fully automated mode, including M16a1. / 所有武器使用单发模式，这个脚本会将单发转化为全自动模式，包括M16a1
 
+
+#### 5. Sensitivity Setting & Delay Setting / 鼠标灵敏度设置和延迟设置。
+
 ## Recommended settings / 推荐设置
 
 罗技的大多数游戏鼠标包含5个快捷键。默认1个前进、1个后退、1个放大dpi，一个缩小dpi，一个放大镜。

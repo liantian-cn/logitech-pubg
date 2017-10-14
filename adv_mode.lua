@@ -31,6 +31,14 @@ local set_off_key = 6
 local fire_key = "Pause"
 local mode_switch_key = "capslock"
 
+
+--- Sensitivity in Game
+--- default is 50.0
+
+local general_sensitivity = 50.0
+local scope_sensitivity = 50.0
+local scope4x_sensitivity = 50.0
+
 ---- Shooting delay setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
 
@@ -161,7 +169,17 @@ function OnEvent(event, arg)
 
             PressAndReleaseKey(fire_key)
             Sleep(current_weapon_intervals)
-            MoveMouseRelative(0, recoil_recovery)
+
+            -- issues/3
+            if IsMouseButtonPressed(2) then
+                recoil_recovery = recoil_recovery / (general_sensitivity / 50.0)
+            elseif recoil_mode() == "basic" then
+                recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
+            elseif recoil_mode() == "quadruple" then
+                recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
+            end
+
+            MoveMouseRelative(0, recoil_recovery )
 
             shoot_duration = shoot_duration + current_weapon_intervals
             OutputLogMessage("--------------------------\n")
