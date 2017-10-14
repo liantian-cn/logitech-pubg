@@ -8,18 +8,20 @@ PUBG no-recoil script for Logitech gaming mouse
 - download and install `logitech gaming software`[LGS]
   - http://support.logitech.com/software/lgs
 - click PUBG in LGS, select `Scripting`.
+  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103649.png)
 - copy and paste script from [adv_mode.lua](https://raw.githubusercontent.com/liantian-cn/logitech-pubg/master/adv_mode.lua) to script box.
 - Ctrl + S to save.
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103649.png)
+
 
 
 - 下载并安装`logitech gaming software`。
   - LGS下载地址 : http://support.logitech.com/software/lgs
-- 点击pubg，选择编写脚本
+- 点击pubg，选择编写脚本。
+  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103015.png)
+
 - 复制[adv_mode.lua](https://raw.githubusercontent.com/liantian-cn/logitech-pubg/master/adv_mode.lua)的代码到脚本框内。
-- 
+
 - 按ctrl+s 保存。
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103015.png)
 
 
 
