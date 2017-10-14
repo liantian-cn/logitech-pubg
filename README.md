@@ -4,20 +4,30 @@ PUBG no-recoil script for Logitech gaming mouse
 (English translation part comes from google)
 
 
+## Copyright notice / 版权说明 
+
+- recoil table some from elitepvpers or ownedcore or other forums public information , other from developer self testing.
+- all other source code, write by my self.
+
+
+- recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
+- 后座力表格以外的源代码，均作者自己书写。
+
+
 ## ChangeLog / 更新说明
 
 2017.10.14 
+
+- Added uzi and scar-l recoil table.
+- The default fire button is changed to "pause".
+- Removed the full part mode because the chances of using are too small, resulting in a lack of testing.
+- Rewriting the logic: now the excitation speed is related to the weapon firing rate.
+
 
 - 新增了uzi 和 scar-l 的后座力表格。
 - 默认开火键修改为"pause"
 - 移除了全配件模式，因为使用机会太小，导致缺乏测试。
 - 重写了逻辑：现在激发速度和武器射速相关。
-
-
-- Added uzi and scar-l backrest table.
-- The default fire button is changed to "pause".
-- Removed the full part mode because the chances of using are too small, resulting in a lack of testing.
-- Rewriting the logic: now the excitation speed is related to the weapon firing rate.
 
 ## How To Use / 食用说明
 
