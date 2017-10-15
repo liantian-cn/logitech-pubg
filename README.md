@@ -4,22 +4,6 @@ PUBG no-recoil script for Logitech gaming mouse
 (English translation part comes from google)
 
 
-## Copyright / 版权说明 
-
-- recoil table some from elitepvpers or ownedcore or other forums public information , other from developer self testing.
-- all other source code, write by my self.
-- [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
-- No service, any suggest can use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
-
-
-
-- recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
-- 后座力表格以外的源代码，均作者自己书写。
-- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。
-- 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
-
-
-
 ##  AY YOUR OWN RISK. / 风险自负。
 
 
@@ -126,3 +110,25 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 - Assign a button  to cancel the no-recoil.
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
+
+
+
+
+
+
+
+
+
+## Copyright / 版权说明 
+
+- recoil table some from elitepvpers or ownedcore or other forums public information , other from developer self testing.
+- all other source code, write by my self.
+- [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
+- No service, any suggest can use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
+
+
+
+- recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
+- 后座力表格以外的源代码，均作者自己书写。
+- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。
+- 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
