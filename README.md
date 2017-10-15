@@ -4,15 +4,27 @@ PUBG no-recoil script for Logitech gaming mouse
 (English translation part comes from google)
 
 
-## Copyright notice / 版权说明 
+## Copyright / 版权说明 
 
 - recoil table some from elitepvpers or ownedcore or other forums public information , other from developer self testing.
 - all other source code, write by my self.
+- [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
+- No service, any suggest can use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
+
 
 
 - recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
 - 后座力表格以外的源代码，均作者自己书写。
+- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。
+- 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
 
+
+
+##  AY YOUR OWN RISK. / 风险自负。
+
+
+- `logitech gaming software` never got banwave in the past,but does not mean that there is no future.
+- `logitech gaming software`过去没有触发过任何Ban wave，但过去没有，不代表将来也没有。
 
 ## ChangeLog / 更新说明
 
@@ -40,7 +52,7 @@ PUBG no-recoil script for Logitech gaming mouse
 - download and install `logitech gaming software`[LGS]
   - http://support.logitech.com/software/lgs
 - click PUBG in LGS, select `Scripting`.
-  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103649.png)
+  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014103649.png)
 - copy and paste script from [adv_mode.lua](https://raw.githubusercontent.com/liantian-cn/logitech-pubg/master/adv_mode.lua) to script box.
 - Ctrl + S to save.
 
@@ -49,7 +61,7 @@ PUBG no-recoil script for Logitech gaming mouse
 - 下载并安装`logitech gaming software`。
   - LGS下载地址 : http://support.logitech.com/software/lgs
 - 点击pubg，选择编写脚本。
-  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014103015.png)
+  ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014103015.png)
 
 - 复制[adv_mode.lua](https://raw.githubusercontent.com/liantian-cn/logitech-pubg/master/adv_mode.lua)的代码到脚本框内。
 
@@ -59,7 +71,7 @@ PUBG no-recoil script for Logitech gaming mouse
 
 ### Edit Setting / 编辑设置
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014104238.png)
+![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
 #### 1. Assigned button number for weapon / 为枪械分配按键编号
 
@@ -84,7 +96,7 @@ PUBG no-recoil script for Logitech gaming mouse
 - 模式切换键`mode switch key`按下时，后座力放大3~4倍，便于使用四倍镜。
 - 默认情况，开火键是"Pause"，方向键上方最右一个。使用大小写锁定键切换4倍模式。
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014110324.png)
+![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
 
 
 #### 3. You should always use Ctrl + S to save script after edit script. / 编辑脚本后记得ctrl + s保存。
@@ -113,4 +125,4 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 - Assign a button to use a big jump.
 - Assign a button  to cancel the no-recoil.
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/20171014153403.png)
+![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
