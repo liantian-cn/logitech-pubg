@@ -16,6 +16,12 @@ PUBG no-recoil script for Logitech gaming mouse
 
 ## ChangeLog / 更新说明
 
+2017.10.15
+
+- Add sensitivity setting.
+- 增加灵敏度设置。 
+
+
 2017.10.14 
 
 - Added uzi and scar-l recoil table.
