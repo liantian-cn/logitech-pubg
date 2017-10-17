@@ -1,14 +1,8 @@
 --------------------------------------------------------------------------
 ----------------        Basic Variable       -----------------------------
----------------- Do not edit                 -----------------------------
+----------------         Do not edit                 ---------------------
 --------------------------------------------------------------------------
 local current_weapon = "none"
-local current_weapon_speed = 100
-local current_weapon_intervals = 30
-local shoot_duration = 0.0
-local coefficient = 1.0
-local current_weapon_recoil = 0.0
-local recoil_recovery = 9.0
 
 --------------------------------------------------------------------------
 ----------------        Basic Setting       ------------------------------
@@ -31,6 +25,11 @@ local set_off_key = 6
 local fire_key = "Pause"
 local mode_switch_key = "capslock"
 
+
+---- ignore key ----
+---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
+
+local ignore_key = "lalt"
 
 --- Sensitivity in Game
 --- default is 50.0
@@ -107,13 +106,32 @@ function recoil_mode()
     end
 end
 
+
 function recoil_value(_weapon,_duration)
     local _mode = recoil_mode()
     local step = (math.floor(_duration/100)) + 1
     if step > 40 then
         step = 40
     end
-    return recoil_table[_weapon][_mode][step]
+    local weapon_recoil = recoil_table[_weapon][_mode][step]
+    -- OutputLogMessage("weapon_recoil = %s\n", weapon_recoil)
+    local weapon_speed = recoil_table[_weapon]["speed"]
+    -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
+    local coefficient = interval_ratio * ( 1 + random_seed * math.random())
+    -- OutputLogMessage("coefficient = %s\n", coefficient)
+    local weapon_intervals = math.floor(coefficient  * weapon_speed)
+    -- OutputLogMessage("weapon_intervals = %s\n", weapon_intervals)
+    local recoil_recovery = weapon_recoil * weapon_intervals / 100
+    -- OutputLogMessage("recoil_recovery = %s\n", recoil_recovery)
+    -- issues/3
+    if IsMouseButtonPressed(2) then
+        recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
+    elseif recoil_mode() == "basic" then
+        recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
+    elseif recoil_mode() == "quadruple" then
+        recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
+    end
+    return weapon_intervals,recoil_recovery
 end
 
 
@@ -149,42 +167,24 @@ function OnEvent(event, arg)
         current_weapon = "scarl"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
-        shoot_duration = 0.0
-        
-        current_weapon_speed = recoil_table[current_weapon]["speed"]
-        OutputLogMessage("current_weapon_speed = %s\n", current_weapon_speed)
-        repeat
-
-            coefficient = interval_ratio * ( 1 + random_seed * math.random())
-            OutputLogMessage("coefficient = %s\n", coefficient)
-
-            current_weapon_intervals = math.floor(coefficient  * current_weapon_speed)
-            OutputLogMessage("current_weapon_intervals = %s\n", current_weapon_intervals)
-            
-            current_weapon_recoil = recoil_value(current_weapon,shoot_duration)
-            OutputLogMessage("current_weapon_recoil = %s\n", current_weapon_recoil)
-
-            recoil_recovery = current_weapon_recoil * current_weapon_intervals / 100
-            OutputLogMessage("recoil_recovery = %s\n", recoil_recovery)
-
-            PressAndReleaseKey(fire_key)
-            Sleep(current_weapon_intervals)
-
-            -- issues/3
-            if IsMouseButtonPressed(2) then
-                recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
-            elseif recoil_mode() == "basic" then
-                recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
-            elseif recoil_mode() == "quadruple" then
-                recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
-            end
-
-            MoveMouseRelative(0, recoil_recovery )
-
-            shoot_duration = shoot_duration + current_weapon_intervals
-            OutputLogMessage("--------------------------\n")
-        until not IsMouseButtonPressed(1)
-        
+        if (current_weapon == "none") or IsModifierPressed(ignore_key) then
+            PressKey(fire_key)
+            repeat
+                Sleep(30)
+            until not IsMouseButtonPressed(1)
+            ReleaseKey(fire_key)
+        else
+            local shoot_duration = 0.0
+            repeat
+                local intervals,recovery = recoil_value(current_weapon,shoot_duration)
+                PressAndReleaseKey(fire_key)
+                MoveMouseRelative(0, recovery )
+                Sleep(intervals)
+                shoot_duration = shoot_duration + intervals
+            until not IsMouseButtonPressed(1)
+        end
+    elseif (event == "“MOUSE_BUTTON_RELEASED”" and arg == 1) then
+        ReleaseKey(fire_key)
     end
 
 end
