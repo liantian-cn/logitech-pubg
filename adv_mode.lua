@@ -29,7 +29,7 @@ local mode_switch_key = "capslock"
 ---- ignore key ----
 ---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
 
-local ignore_key = "lalt"
+local ignore_key = "lshift"
 
 --- Sensitivity in Game
 --- default is 50.0
@@ -167,7 +167,7 @@ function OnEvent(event, arg)
         current_weapon = "scarl"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
-        if (current_weapon == "none") or IsModifierPressed(ignore_key) then
+        if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
             PressKey(fire_key)
             repeat
                 Sleep(30)
