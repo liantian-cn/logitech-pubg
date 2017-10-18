@@ -40,9 +40,10 @@ local scope4x_sensitivity = 50.0
 
 ---- Shooting delay setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
-
-local interval_ratio = 0.5
-local random_seed = 0.5
+local weapon_speed_mode = false
+local obfs_mode = true
+local interval_ratio = 1
+local random_seed = 0.3
 
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
@@ -115,14 +116,23 @@ function recoil_value(_weapon,_duration)
     end
     local weapon_recoil = recoil_table[_weapon][_mode][step]
     -- OutputLogMessage("weapon_recoil = %s\n", weapon_recoil)
-    local weapon_speed = recoil_table[_weapon]["speed"]
+    
+    local weapon_speed = 30
+    if weapon_speed_mode then
+        local weapon_speed = recoil_table[_weapon]["speed"]
+    end
     -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
-    local coefficient = interval_ratio * ( 1 + random_seed * math.random())
-    -- OutputLogMessage("coefficient = %s\n", coefficient)
-    local weapon_intervals = math.floor(coefficient  * weapon_speed)
+
+    local weapon_intervals = weapon_speed
+    if obfs_mode then
+
+        local coefficient = interval_ratio * ( 1 + random_seed * math.random())
+        weapon_intervals = math.floor(coefficient  * weapon_speed) 
+    end
     -- OutputLogMessage("weapon_intervals = %s\n", weapon_intervals)
-    local recoil_recovery = weapon_recoil * weapon_intervals / 100
-    -- OutputLogMessage("recoil_recovery = %s\n", recoil_recovery)
+
+    recoil_recovery = weapon_recoil * weapon_intervals / 100
+    
     -- issues/3
     if IsMouseButtonPressed(2) then
         recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
@@ -131,6 +141,7 @@ function recoil_value(_weapon,_duration)
     elseif recoil_mode() == "quadruple" then
         recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
     end
+
     return weapon_intervals,recoil_recovery
 end
 
