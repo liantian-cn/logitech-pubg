@@ -1,7 +1,10 @@
 # logitech-pubg
 PUBG no-recoil script for Logitech gaming mouse 
+绝地求生罗技鼠标宏
 
-(English translation part comes from google)
+
+[manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation part comes from google)
+[使用说明](https://github.com/liantian-cn/logitech-pubg#风险自负)
 
 
 #  AY YOUR OWN RISK
