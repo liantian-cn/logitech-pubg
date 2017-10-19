@@ -101,7 +101,7 @@ recoil_table["none"] = {
 
 
 function convert_sens(unconvertedSens) 
-    return 0.002 * math.pow(10, unconvertedSens / 50);
+    return 0.002 * math.pow(10, unconvertedSens / 50)
 end
 
 function calc_sens_scale(sensitivity)
@@ -114,9 +114,9 @@ local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
 
 function recoil_mode()
     if IsKeyLockOn(mode_switch_key) then
-        return "quadruple"
+        return "quadruple";
     else
-        return "basic"
+        return "basic";
     end
 end
 
@@ -148,11 +148,11 @@ function recoil_value(_weapon,_duration)
     
     -- issues/3
     if IsMouseButtonPressed(2) then
-        recoil_recovery = recoil_recovery * target_scale
+        recoil_recovery = recoil_recovery / target_scale
     elseif recoil_mode() == "basic" then
-        recoil_recovery = recoil_recovery * scope_scale
+        recoil_recovery = recoil_recovery / scope_scale
     elseif recoil_mode() == "quadruple" then
-        recoil_recovery= recoil_recovery * scope4x_scale
+        recoil_recovery= recoil_recovery / scope4x_scale
     end
 
     return weapon_intervals,recoil_recovery
