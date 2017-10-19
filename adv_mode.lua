@@ -34,9 +34,9 @@ local ignore_key = "lshift"
 --- Sensitivity in Game
 --- default is 50.0
 
-local target_sensitivity = 50.0
-local scope_sensitivity = 50.0
-local scope4x_sensitivity = 50.0
+local target_sensitivity = 50
+local scope_sensitivity = 50
+local scope4x_sensitivity = 50
 
 ---- Shooting delay setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
@@ -99,6 +99,19 @@ recoil_table["none"] = {
 ----------------          Function          ------------------------------
 --------------------------------------------------------------------------
 
+
+function convert_sens(unconvertedSens) 
+    return 0.002 * math.pow(10, unconvertedSens / 50);
+end
+
+function calc_sens_scale(sensitivity)
+    return convert_sens(sensitivity)/convert_sens(50)
+end
+
+local target_scale = calc_sens_scale(target_sensitivity)
+local scope_scale = calc_sens_scale(scope_sensitivity)
+local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
+
 function recoil_mode()
     if IsKeyLockOn(mode_switch_key) then
         return "quadruple"
@@ -135,11 +148,11 @@ function recoil_value(_weapon,_duration)
     
     -- issues/3
     if IsMouseButtonPressed(2) then
-        recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
+        recoil_recovery = recoil_recovery * target_scale
     elseif recoil_mode() == "basic" then
-        recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
+        recoil_recovery = recoil_recovery * scope_scale
     elseif recoil_mode() == "quadruple" then
-        recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
+        recoil_recovery= recoil_recovery * scope4x_scale
     end
 
     return weapon_intervals,recoil_recovery
