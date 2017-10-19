@@ -38,7 +38,7 @@ local target_sensitivity = 50
 local scope_sensitivity = 50
 local scope4x_sensitivity = 50
 
----- Shooting delay setting
+---- Obfs setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
 local weapon_speed_mode = false
 local obfs_mode = true
