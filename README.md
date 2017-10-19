@@ -113,7 +113,6 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 #  风险自负。
 
 
-- `logitech gaming software` never got banwave in the past,but does not mean that there is no future.
 - `logitech gaming software`过去没有触发过任何Ban wave，但过去没有，不代表将来也没有。
 
 #  更新说明
