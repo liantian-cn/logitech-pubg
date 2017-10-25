@@ -209,6 +209,13 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
 
 
+## 常见问题
+
+#### 无法自动射击
+以管理员身份运行LGS
+文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe"
+可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
+
 ## 版权说明 
 
 - recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
