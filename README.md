@@ -212,9 +212,9 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 ## 常见问题
 
 #### 无法自动射击
-以管理员身份运行LGS
-文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe"
-可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
+以管理员身份运行LGS，文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe" ，可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
+一般是因为使用代理加速器，导致游戏是以管理员身份运行导致的。
+
 
 ## 版权说明 
 
