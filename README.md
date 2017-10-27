@@ -103,6 +103,16 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
 
 
+# Not working?
+
+## run LGS as administrator
+UAC will isolate user32.dll‘s function between users and administrators. both [keybd_event](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646304(v=vs.85).aspx) and [SendInput](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx) function are in user32.dll. so if you run pubg as administrator , you also need to run LGS as administrator.
+
+You may not notice that pubg in the admin, may be pubg is child process of steam.exe , and steam is child process of steam update , steam update must run as admin.
+
+## set "Lock profile while game is running"
+By default ， LGS will only run profile when game's window is "active", use [GetActiveWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646292(v=vs.85).aspx) , but in windows 10 , input and notification will often become active window, maybe bug maybe not.
+
 
 # Copyright 
 
@@ -209,11 +219,19 @@ Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
 
 
-## 常见问题
-
-#### 无法自动射击
-以管理员身份运行LGS，文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe" ，可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
+## 常见问题 ? 无法自动射击　？
 一般是因为使用代理加速器，导致游戏是以管理员身份运行导致的。
+
+## 以管理员身份运行LGS
+文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe" ，可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
+
+UAC会隔离user权限的user32.dll对管理员权限的进程访问.  [keybd_event](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646304(v=vs.85).aspx) 和 [SendInput](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx) 都属于 user32.dll.所以，如果pubg是管理员权限运行的，也需要以管理员权限运行LGS。
+
+你可能没有注意到Pubg是以管理员身份运行的，也许是因为pubg是 steam.exe的子进程 , steam 又是steam update的子进程。 steam update 以管理员权限更新steam。 也或许，是因为网游加速器需要lsp劫持或者vpn拨号，是以管理员权限启动的，然后通过加速器启动的游戏。
+
+## 设置 "当游戏正在运行时锁定配置"
+默认的，LGS只对当前的活动窗口生效。[GetActiveWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646292(v=vs.85).aspx) ,在Win10中，活动窗口可能被输入法或者提醒功能抢占。
+
 
 
 ## 版权说明 
