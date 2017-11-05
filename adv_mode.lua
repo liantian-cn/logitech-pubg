@@ -42,8 +42,8 @@ local scope4x_sensitivity = 50
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
 local weapon_speed_mode = false
 local obfs_mode = true
-local interval_ratio = 1
-local random_seed = 0.3
+local interval_ratio = 0.75
+local random_seed = 1
 
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
