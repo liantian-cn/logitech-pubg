@@ -7,7 +7,7 @@ PUBG no-recoil script for Logitech gaming mouse
 [使用说明](https://github.com/liantian-cn/logitech-pubg#风险自负)
 
 
-#  AY YOUR OWN RISK
+#  AT YOUR OWN RISK
 
 
 - `logitech gaming software` never got banwave in the past,but does not mean that there is no future.
