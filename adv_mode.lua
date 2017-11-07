@@ -207,7 +207,7 @@ function OnEvent(event, arg)
                 shoot_duration = shoot_duration + intervals
             until not IsMouseButtonPressed(1)
         end
-    elseif (event == "“MOUSE_BUTTON_RELEASED”" and arg == 1) then
+    elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
 
