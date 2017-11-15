@@ -132,7 +132,7 @@ function recoil_value(_weapon,_duration)
     
     local weapon_speed = 30
     if weapon_speed_mode then
-        local weapon_speed = recoil_table[_weapon]["speed"]
+        weapon_speed = recoil_table[_weapon]["speed"]
     end
     -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
 
