@@ -44,18 +44,18 @@ PUBG no-recoil script for Logitech gaming mouse
 - Ctrl + S to save.
 
 
-## Edit Setting
+# How to Edit Setting
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
-### 1. Assigned button number for weapon
+## 1. Assigned button number for weapon
 
 - the button number can be find in log windows, when the mouse button click, log prompt `event = MOUSE_BUTTON_RELEASED, arg = X`, the X is the button number.
 - Weapon has 6 kinds, and different models of Logitech mouse function keys may be less than 6, for unnecessary weapons allocation `nil` value.
 - You should always assign a button to cancel the set recoil compensation. `set_off_key`
  
 
-### 2. Set the fire key and the mode switch key. 
+## 2. Set the fire key and the mode switch key. 
 
 
 - the `fire key` button needs to be consistent with the game settings, and in the game to cancel the left mouse button binding.
@@ -66,30 +66,30 @@ PUBG no-recoil script for Logitech gaming mouse
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
 
 
-### 3. Ignore Key
+## 3. Ignore Key
 
 
 - You can set a ignore Key, and when the key is pressed, the script pauses.
 - Limited by LGS, you can only select "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" and Logitech G Key(Logitech game keyboard only)
 - By default is "lshift" 
 
-### 4. Sensitivity Setting 
+## 4. Sensitivity Setting 
 
 - If you modify the mouse sensitivity settings in the game menu, you need to modify the settings.
 - Mouse dpi does not affect the script running, Logitech has done this.
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171015014208.png)
 
-### 5. Obfs Setting
+## 5. Obfs Setting
 
 - In the default mode, the shooting interval varies randomly from 30ms to 39ms. You can modify several variables to change this random range.
 
 - When `weapon_speed_mode = ture`, the use of weapons based on the rate of random fire.
 
-### 6. You should always use Ctrl + S to save script after edit script. 
+## 6. You should always use Ctrl + S to save script after edit script. 
 
 
-## Recommended settings
+# Recommended settings
 
 
 Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 1 zoom, a reduced dpi, a magnifying glass.
@@ -162,18 +162,18 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 
 
-## 编辑设置
+# 编辑设置
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
-### 1.  为枪械分配按键编号
+## 1.  为枪械分配按键编号
  
 - 按键编号可以通过查看下方日志得到，当按下鼠标按键时，下方日志提示`event = MOUSE_BUTTON_RELEASED , arg = X`，这个X就是按键编号。
 - 枪械拥有6种，而不同型号的罗技鼠标功能键数量可能小于6，为不需要使用的武器分配`nil`值。
 - 总是应该为取消设置后座力补偿分配一个按键。`set_off_key`
 
 
-### 2.  设置开火按键和模式切换按键
+## 2.  设置开火按键和模式切换按键
 
 - 开火`fire key`按键需要和游戏内设置一致，并在游戏内取消鼠标左键的绑定。
 - 模式切换键`mode switch key`按下时，后座力放大3~4倍，便于使用四倍镜。
@@ -183,29 +183,29 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
 
 
-### 3. 忽略键
+## 3. 忽略键
 
 - 您可以设置一个忽略键，当按下该键时，脚本会暂停。
 - 受限于LGS，你只能选择这些按键作为忽略键： "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" 
 - 默认设置是 "lshift" 
 
-### 4. 灵敏度设置 
+## 4. 灵敏度设置 
 
 - 如果您修改游戏菜单中的鼠标灵敏度设置，则需要修改设置。
 - 鼠标dpi不影响脚本运行，罗技已经做好了转换。
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171015014208.png)
 
-### 5. 混淆设置
+## 5. 混淆设置
 
 - 在默认模式下，射击间隔从30ms到39ms随机变化。 可以修改几个变量来更改此随机范围。
 
 - 当 `weapon_speed_mode = ture`, 使用武器速度做基准，而不是默认的30ms.
 
 
-### 6.编辑脚本后记得ctrl + s保存。
+## 6.编辑脚本后记得ctrl + s保存。
 
-##  推荐设置
+#  推荐设置
 
 罗技的大多数游戏鼠标包含5个快捷键。默认1个前进、1个后退、1个放大dpi，一个缩小dpi，一个放大镜。
 
@@ -219,25 +219,28 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
 
 
-## 常见问题 ? 无法自动射击　？
+# 常见问题 ? 
+
+## 无法自动射击　？
 一般是因为使用代理加速器，导致游戏是以管理员身份运行导致的。
 
-#### 以管理员身份运行LGS ####
+### 以管理员身份运行LGS ###
 文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe" ，可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
 
 UAC会隔离user权限的user32.dll对管理员权限的进程访问.  [keybd_event](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646304(v=vs.85).aspx) 和 [SendInput](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx) 都属于 user32.dll.所以，如果pubg是管理员权限运行的，也需要以管理员权限运行LGS。
 
 你可能没有注意到Pubg是以管理员身份运行的，也许是因为pubg是 steam.exe的子进程 , steam 又是steam update的子进程。 steam update 以管理员权限更新steam。 也或许，是因为网游加速器需要lsp劫持或者vpn拨号，是以管理员权限启动的，然后通过加速器启动的游戏。
 
-#### 设置 "当游戏正在运行时锁定配置" ####
+### 设置 "当游戏正在运行时锁定配置" ###
 默认的，LGS只对当前的活动窗口生效。[GetActiveWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646292(v=vs.85).aspx) ,在Win10中，活动窗口可能被输入法或者提醒功能抢占。
 
 
-## 一些不无聊可以谈谈的问题
+
+# 一些不无聊可以谈谈的问题
 
 这些问题，国内玩家问的很多，很多论坛都在谈论，随便说说。
 
-#### Q: 为什么我看隔壁的鼠标宏只能打在一个点上？这个项目却跟没用一样 ####
+## Q: 为什么我看隔壁的鼠标宏只能打在一个点上？这个项目却跟没用一样 ##
 
 A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 
@@ -262,7 +265,7 @@ A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 
 不管哪种，都可以实现枪的子弹打到一个点上。目前来说，这都是高风险的作弊行为。
 
-#### Q: 怎么看待鼠标宏？ ####
+## Q: 怎么看待鼠标宏？ ##
 
 A: 参考[wiki对于"作弊"的解释](https://en.wikipedia.org/wiki/Cheating)：
 It is generally used for the breaking of rules to gain unfair advantage in a competitive situation. 
@@ -277,23 +280,23 @@ It is generally used for the breaking of rules to gain unfair advantage in a com
 
 所以，鼠标宏是否算作作弊，要看你心中的限度有多大。
 
-#### Q: 作者现在什么枪用什么鼠标宏？ ####
+## Q: 作者现在什么枪用什么鼠标宏？ ##
 
 如前所述，在pubg中，鼠标宏的作用极其有限。所以，当你游戏时间超过200小时的时候，鼠标宏可能除了用于M16A1的连射外就无他用了。
 liantian就是这个状态，目前游戏时间305小时，这个宏基本用不到了...
 
 
-#### Q: 付费指导 ####
+## Q: 付费指导 ##
 
 A: 抱歉，没精力，懒。
 
 
-#### Q: 推荐作弊器么 ####
+## Q: 推荐作弊器么 ##
 
 A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大保健。
 
 
-## 版权说明 
+# 版权说明 
 
 - recoil table 后座力表格来自[mpgh](mpgh.net/forum/forumdisplay.php?f=913) 、 [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/) 等论坛的公开信息及个人测试。
 - 后座力表格以外的源代码，均作者自己书写。
