@@ -254,14 +254,16 @@ A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 * 水平方向上：
   * 只有一个最大值线性增加的随机后座力。
 
-* 一个线性增长的散射度。
+* 一个线性增长的散射度。令你瞄准也可能会打歪。
 
-后座力上的随机性，使的这个游戏没有完美的压枪，即便APLUS和shourd的爆头率，也是低于他们csgo的，更不存在完美的“鼠标宏”。至于`这个repository的效果，虽然不能说完美，但已经尽力了，鼠标宏能实现的不过如此。`
+后座力上的随机性，使的这个游戏没有完美的压枪，即便APLUS和shourd的爆头率，也是远低于他们csgo的。
+更不存在完美的“鼠标宏”，所以在作者看来：`这个repository的效果，虽然不能说完美，但已经尽力了，鼠标宏能实现的不过如此。`
 
 再来说说“**无后坐力挂**”，目前无后坐力挂分为两种：
 
-* 修改游戏pak文件实现的无后坐力，可以参见[UC论坛的帖子](https://www.unknowncheats.me/forum/playerunknown-s-battlegrounds/245772-recoil-gold-players-pak-mods.html)
-* 写内存的方式实现的无后座力，可以参见[G-E-N-E-S-I-S/TslGame_MULTI_HACK](https://github.com/G-E-N-E-S-I-S/TslGame_MULTI_HACK)
+* 修改游戏pak文件实现的无后坐力，可以参见[UC论坛的帖子](https://www.unknowncheats.me/forum/playerunknown-s-battlegrounds/245772-recoil-gold-players-pak-mods.html)，完全利用蓝洞的设计漏洞实现。俗称的"无后"
+* 写内存的方式实现的无后座力，就是俗称的"外挂"。
+  * 喜欢研究代码，可以参见[G-E-N-E-S-I-S/TslGame_MULTI_HACK](https://github.com/G-E-N-E-S-I-S/TslGame_MULTI_HACK)和[TJ888/PUBG-SDK](https://github.com/TJ888/PUBG-SDK)，学习技术总是无罪的。
 
 不管哪种，都可以实现枪的子弹打到一个点上。目前来说，这都是高风险的作弊行为。
 
