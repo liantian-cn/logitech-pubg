@@ -263,7 +263,7 @@ A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 
 * 修改游戏pak文件实现的无后坐力，可以参见[UC论坛的帖子](https://www.unknowncheats.me/forum/playerunknown-s-battlegrounds/245772-recoil-gold-players-pak-mods.html)，完全利用蓝洞的设计漏洞实现。俗称的"无后"
 * 写内存的方式实现的无后座力，就是俗称的"外挂"。
-  * 喜欢研究代码，可以参见[G-E-N-E-S-I-S/TslGame_MULTI_HACK](https://github.com/G-E-N-E-S-I-S/TslGame_MULTI_HACK)和[TJ888/PUBG-SDK](https://github.com/TJ888/PUBG-SDK)，学习技术总是无罪的。
+  * 喜欢研究代码，可以参见[G-E-N-E-S-I-S/TslGame_MULTI_HACK](https://github.com/G-E-N-E-S-I-S/TslGame_MULTI_HACK)和[TJ888/PUBG-SDK](https://github.com/TJ888/PUBG-SDK)，学习技术总是无罪的。
 
 不管哪种，都可以实现枪的子弹打到一个点上。目前来说，这都是高风险的作弊行为。
 
@@ -272,7 +272,7 @@ A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 A: 参考[wiki对于"作弊"的解释](https://en.wikipedia.org/wiki/Cheating)：
 It is generally used for the breaking of rules to gain unfair advantage in a competitive situation. 
 翻译过来就是：在竞争中获得不公平的优势。
-那么什么是不公平的，世间又有公平么？
+那么什么是不公平的，什么又是公平，存在公平么？
 
 * 144hz的显示器，相对60hz的显示器，是否是不公平的？
 * 使用[ROG的声波雷达](https://rog.asus.com/technology/rog-sound-innovations/sonic-radar/)，相对普通声卡，是否是公平的？
@@ -288,12 +288,38 @@ It is generally used for the breaking of rules to gain unfair advantage in a com
 liantian就是这个状态，目前游戏时间305小时，这个宏基本用不到了...
 
 
-## Q4: 付费指导 ##
+## Q4：我的朋友用罗技鼠标宏被封号了 ##
+
+A：不管你在哪个论坛看到这个言论，99%有以下几个真相：
+ 
+* "我的朋友"="我自己"
+* 如果不是吓唬人，那就是那个LZ买到了“无后pak”或者“无后挂”。
+
+## Q5：罗技鼠标宏会被检测么？ ##
+
+A：几乎可以100%确定，已经被检测到了。
+
+被任何主流反作弊检测到并不难，毕竟....：
+
+* 宏不是硬件宏，只是用LGS内置的LUA引擎运行的软件宏而已。
+* LGS没有任何反注入、反检测什么的。
+* 宏是明文保存在你的电脑里，并加载到内存里的。
+
+## Q6：罗技鼠标宏会被封号么？ ##
+
+A： 有微小的可能，很难想象。
+
+罗技是世界最大的游戏外设制造商，自定义脚本这个功能，作为罗技高端G系列键鼠的卖点而存在。
+所以，如果任何游戏厂商想在自己的游戏中鼠标宏无法作用，与其去封号，不如去找外设厂商谈谈。
+
+目前，即便竞技性最强的CS:GO，也没有发生应为几大外设厂商的宏功能导致封号的案例发生。
+
+## Q7: 付费指导 ##
 
 A: 抱歉，没精力，懒。
 
 
-## Q5: 推荐作弊器么 ##
+## Q8: 推荐作弊器么 ##
 
 A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大保健。
 
