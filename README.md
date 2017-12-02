@@ -116,7 +116,7 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 # Copyright 
 
-- recoil table some from elitepvpers or ownedcore or other forums public information , other from developer self testing.
+- recoil table some from [mpgh](mpgh.net/forum/forumdisplay.php?f=913) / [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/)e or other forums public information , other from developer self testing.
 - all other source code, write by my self.
 - [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
 - No service, any suggest can use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
@@ -222,21 +222,83 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 ## 常见问题 ? 无法自动射击　？
 一般是因为使用代理加速器，导致游戏是以管理员身份运行导致的。
 
-## 以管理员身份运行LGS
+#### 以管理员身份运行LGS ####
 文件坐标："C:\Program Files\Logitech Gaming Software\LCore.exe" ，可以在这个程序的属性>兼容性，勾选以“管理员身份运行此程序”
 
 UAC会隔离user权限的user32.dll对管理员权限的进程访问.  [keybd_event](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646304(v=vs.85).aspx) 和 [SendInput](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx) 都属于 user32.dll.所以，如果pubg是管理员权限运行的，也需要以管理员权限运行LGS。
 
 你可能没有注意到Pubg是以管理员身份运行的，也许是因为pubg是 steam.exe的子进程 , steam 又是steam update的子进程。 steam update 以管理员权限更新steam。 也或许，是因为网游加速器需要lsp劫持或者vpn拨号，是以管理员权限启动的，然后通过加速器启动的游戏。
 
-## 设置 "当游戏正在运行时锁定配置"
+#### 设置 "当游戏正在运行时锁定配置" ####
 默认的，LGS只对当前的活动窗口生效。[GetActiveWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646292(v=vs.85).aspx) ,在Win10中，活动窗口可能被输入法或者提醒功能抢占。
 
+
+## 一些不无聊可以谈谈的问题
+
+这些问题，国内玩家问的很多，很多论坛都在谈论，随便说说。
+
+#### Q: 为什么我看隔壁的鼠标宏只能打在一个点上？这个项目却跟没用一样 ####
+
+A: 请区分“鼠标宏”和“无后坐力挂”的区别。
+
+在PUBG这个游戏内，后座力由几个向量构成:
+
+* 垂直方向上：
+  * 一个2次线性的固定后座力。
+  * 一个最大值线性增加的随机后座力。
+  * 一个抵抗后座力恢复效果，同样包含固定和随机的成分。
+
+* 水平方向上：
+  * 只有一个最大值线性增加的随机后座力。
+
+* 一个线性增长的散射度。
+
+后座力上的随机性，使的这个游戏没有完美的压枪，即便APLUS和shourd的爆头率，也是低于他们csgo的，更不存在完美的“鼠标宏”。至于`这个repository的效果，虽然不能说完美，但已经尽力了，鼠标宏能实现的不过如此。`
+
+再来说说“**无后坐力挂**”，目前无后坐力挂分为两种：
+
+* 修改游戏pak文件实现的无后坐力，可以参见[UC论坛的帖子](https://www.unknowncheats.me/forum/playerunknown-s-battlegrounds/245772-recoil-gold-players-pak-mods.html)
+* 写内存的方式实现的无后座力，可以参见[G-E-N-E-S-I-S/TslGame_MULTI_HACK](https://github.com/G-E-N-E-S-I-S/TslGame_MULTI_HACK)
+
+不管哪种，都可以实现枪的子弹打到一个点上。目前来说，这都是高风险的作弊行为。
+
+#### Q: 怎么看待鼠标宏？ ####
+
+A: 参考[wiki对于"作弊"的解释](https://en.wikipedia.org/wiki/Cheating)：
+It is generally used for the breaking of rules to gain unfair advantage in a competitive situation. 
+翻译过来就是：在竞争中获得不公平的优势。
+那么什么是不公平的，世间又有公平么？
+
+* 144hz的显示器，相对60hz的显示器，是否是不公平的？
+* 使用[ROG的声波雷达](https://rog.asus.com/technology/rog-sound-innovations/sonic-radar/)，相对普通声卡，是否是公平的？
+* 使用8700k+1080ti流畅玩家，是否对于3570+760的玩家是不公平？
+
+所以本来本来没有绝对的公平，只能define 公平=一个限度内的不公平。
+
+所以，鼠标宏是否算作作弊，要看你心中的限度有多大。
+
+#### Q: 作者现在什么枪用什么鼠标宏？ ####
+
+如前所述，在pubg中，鼠标宏的作用极其有限。所以，当你游戏时间超过200小时的时候，鼠标宏可能除了用于M16A1的连射外就无他用了。
+liantian就是这个状态，目前游戏时间305小时，这个宏基本用不到了...
+
+
+#### Q: 付费指导 ####
+
+A: 抱歉，没精力，懒。
+
+
+#### Q: 推荐作弊器么 ####
+
+A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大保健。
 
 
 ## 版权说明 
 
-- recoil table 后座力表格来自elitepvpers / ownedcore 等论坛的公开信息及个人测试。
+- recoil table 后座力表格来自[mpgh](mpgh.net/forum/forumdisplay.php?f=913) 、 [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/) 等论坛的公开信息及个人测试。
 - 后座力表格以外的源代码，均作者自己书写。
-- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。
+- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。（拿去卖也不介意，但麻烦自行售后）
 - 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
+
+
+
