@@ -221,7 +221,7 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 # 常见问题 ? 
 
-## 无法自动射击　？
+## Q1: 无法自动射击　？
 一般是因为使用代理加速器，导致游戏是以管理员身份运行导致的。
 
 ### 以管理员身份运行LGS ###
@@ -240,7 +240,7 @@ UAC会隔离user权限的user32.dll对管理员权限的进程访问.  [keybd_e
 
 这些问题，国内玩家问的很多，很多论坛都在谈论，随便说说。
 
-## Q: 为什么我看隔壁的鼠标宏只能打在一个点上？这个项目却跟没用一样 ##
+## Q1: 为什么我看隔壁的鼠标宏只能打在一个点上？这个项目却跟没用一样 ##
 
 A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 
@@ -265,7 +265,7 @@ A: 请区分“鼠标宏”和“无后坐力挂”的区别。
 
 不管哪种，都可以实现枪的子弹打到一个点上。目前来说，这都是高风险的作弊行为。
 
-## Q: 怎么看待鼠标宏？ ##
+## Q2: 怎么看待鼠标宏？ ##
 
 A: 参考[wiki对于"作弊"的解释](https://en.wikipedia.org/wiki/Cheating)：
 It is generally used for the breaking of rules to gain unfair advantage in a competitive situation. 
@@ -280,18 +280,18 @@ It is generally used for the breaking of rules to gain unfair advantage in a com
 
 所以，鼠标宏是否算作作弊，要看你心中的限度有多大。
 
-## Q: 作者现在什么枪用什么鼠标宏？ ##
+## Q3: 作者现在什么枪用什么鼠标宏？ ##
 
 如前所述，在pubg中，鼠标宏的作用极其有限。所以，当你游戏时间超过200小时的时候，鼠标宏可能除了用于M16A1的连射外就无他用了。
 liantian就是这个状态，目前游戏时间305小时，这个宏基本用不到了...
 
 
-## Q: 付费指导 ##
+## Q4: 付费指导 ##
 
 A: 抱歉，没精力，懒。
 
 
-## Q: 推荐作弊器么 ##
+## Q5: 推荐作弊器么 ##
 
 A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大保健。
 
