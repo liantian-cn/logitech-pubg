@@ -3,14 +3,14 @@ PUBG no-recoil script for Logitech gaming mouse
 绝地求生罗技鼠标宏
 
 
-[manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation part comes from google)
+[manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation helped by Siming)
 [使用说明](https://github.com/liantian-cn/logitech-pubg#风险自负)
 
 
 #  AT YOUR OWN RISK
 
 
-- `logitech gaming software` never got banwave in the past,but does not mean that there is no future.
+- `logitech gaming software` never triggered any banwaves in the past, but this doesn't mean there won't be any banwaves in the future.
 
 
 # ChangeLog
@@ -18,12 +18,12 @@ PUBG no-recoil script for Logitech gaming mouse
 
 2017.10.18
 
-- Correct the logic of the suspension, easy to thunder.
-- Increase the shielding of the shortcut keys, ignore_key, the default shift
+- Fixed macro disable logic, optimized for tossing grenades
+- Added hotkey to disable macro named "ignore_key", default to "shift"
 
 2017.10.15
 
-- Add sensitivity setting.
+- Added sensitivity setting.
 
 
 
@@ -31,8 +31,8 @@ PUBG no-recoil script for Logitech gaming mouse
 
 - Added uzi and scar-l recoil table.
 - The default fire button is changed to "pause".
-- Removed the full part mode because the chances of using are too small, resulting in a lack of testing.
-- Rewriting the logic: now the excitation speed is related to the weapon firing rate.
+- Removed the full attachment mode because the chances of geting all attachments is low, and lacks testing.
+- Rewriting the logic: now the trigger speed is on par with the weapon firing rate.
 
 # How To Use 
 
@@ -48,43 +48,43 @@ PUBG no-recoil script for Logitech gaming mouse
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
-## 1. Assigned button number for weapon
+## 1. Assign buttons to weapon
 
-- the button number can be find in log windows, when the mouse button click, log prompt `event = MOUSE_BUTTON_RELEASED, arg = X`, the X is the button number.
-- Weapon has 6 kinds, and different models of Logitech mouse function keys may be less than 6, for unnecessary weapons allocation `nil` value.
-- You should always assign a button to cancel the set recoil compensation. `set_off_key`
+- you can get the button numbers from logitech log window. When you click a mouse button, the log will prompt `event = MOUSE_BUTTON_RELEASED, arg = X`, X is the button number.
+- there are 6 weapon types. if you have a logitech mouse with less than 6 buttons, map unused buttons/weapons to `nil`.
+- You should always assign a button to cancel the recoil macro. `set_off_key`
  
 
 ## 2. Set the fire key and the mode switch key. 
 
 
-- the `fire key` button needs to be consistent with the game settings, and in the game to cancel the left mouse button binding.
-- When the `mode switch key` is pressed, recoil zoom  3-4x , easy to use quadruple mirror.
-- By default , `fire key` is `pause` ,  `mode switch key` is `capslock`.
-- **All weapons use the single-shot model, which converts the individual into a fully automated mode, including M16a1. **
+- unset the `Fire` binding in game from your mouse left button, and set it to `Pause` key. This needs to be consistent between the script and the game setting.
+- When the `mode switch key` is pressed, recoil is magnified by  3-4x, consistent with 4x scope mode.
+- By default in the script , `fire key` is `pause` ,  `mode switch key` is `capslock`.
+- **always keep your weapons in single-fire mode. The script will automatically fire in auto mode, including M16A1s**
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
 
 
-## 3. Ignore Key
+## 3. Ignore Key (script pause)
 
 
 - You can set a ignore Key, and when the key is pressed, the script pauses.
 - Limited by LGS, you can only select "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" and Logitech G Key(Logitech game keyboard only)
-- By default is "lshift" 
+- By default the ignore key is "lshift" 
 
 ## 4. Sensitivity Setting 
 
-- If you modify the mouse sensitivity settings in the game menu, you need to modify the settings.
-- Mouse dpi does not affect the script running, Logitech has done this.
+- If you modify the mouse sensitivity settings in the game menu, you need to modify the settings in script.
+- Mouse dpi does not affect the script. this is built into Logitech driver functionality.
 
 ![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171015014208.png)
 
 ## 5. Obfs Setting
 
-- In the default mode, the shooting interval varies randomly from 30ms to 39ms. You can modify several variables to change this random range.
+- by default, shoot interval random between 30-39ms. You can modify script variables to change this behavior.
 
-- When `weapon_speed_mode = ture`, the use of weapons based on the rate of random fire.
+- When `weapon_speed_mode = true`, shots will be fired the same rate as weapon base rate, instead of the above random interval.
 
 ## 6. You should always use Ctrl + S to save script after edit script. 
 
@@ -117,9 +117,9 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 # Copyright 
 
 - recoil table some from [mpgh](mpgh.net/forum/forumdisplay.php?f=913) / [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/)e or other forums public information , other from developer self testing.
-- all other source code, write by my self.
+- all other source code, write by myself.
 - [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
-- No service, any suggest can use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
+- No support, for suggestions, use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
 
 
 
