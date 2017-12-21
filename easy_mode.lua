@@ -1,6 +1,6 @@
-
 EnablePrimaryMouseButtonEvents (true)
 local step = 2.0
+local recoil = false
 function OnEvent(event, arg)
   OutputLogMessage("event = %s, arg = %d\n", event, arg)
   if (event == "PROFILE_ACTIVATED") then
@@ -8,23 +8,26 @@ function OnEvent(event, arg)
   end
 
   if (event == "MOUSE_BUTTON_PRESSED" and arg == 6) then
-    recoil = not recoil
-    if (recoil == false) then
-      OutputLogMessage("Recoil OFF\n")
-    else
-      OutputLogMessage("Recoil ON\n")
-    end
-    step = 2.0
+    recoil = false
+    
   end
 
   if (event == "MOUSE_BUTTON_PRESSED" and arg == 4) then
-    step = step * 1.25
+	if (recoil == false) then
+		step = 2.0
+		recoil = true
+	else
+    		step = step * 1.25
+	end
   end
 
   if (event == "MOUSE_BUTTON_PRESSED" and arg == 5) then
-    if step > 1 then
-      step = step * 0.8
-    end
+    if (recoil == false) then
+		step = 2.0
+		recoil = true
+	else
+    		step = step * 0.8
+	end
   end
 
   if (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and recoil) then
