@@ -16,6 +16,10 @@ PUBG no-recoil script for Logitech gaming mouse
 # ChangeLog
 
 
+2017.12.23
+
+- update for 3.5.5.6 (1.0 release)  [Script Effect](https://github.com/liantian-cn/logitech-pubg/issues/47)
+
 2017.10.18
 
 - Fixed macro disable logic, optimized for tossing grenades
@@ -128,6 +132,10 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 #  更新说明
 
+
+2017.12.23
+
+- 正对正式版更新，效果见[#47](https://github.com/liantian-cn/logitech-pubg/issues/47)
 
 2017.10.18
 
