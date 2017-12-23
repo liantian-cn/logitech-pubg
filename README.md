@@ -116,8 +116,6 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 # Copyright 
 
-- recoil table some from [mpgh](mpgh.net/forum/forumdisplay.php?f=913) / [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/)e or other forums public information , other from developer self testing.
-- all other source code, write by myself.
 - [The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")
 - No support, for suggestions, use [Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues").
 
@@ -328,8 +326,6 @@ A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大�
 
 # 版权说明 
 
-- recoil table 后座力表格来自[mpgh](mpgh.net/forum/forumdisplay.php?f=913) 、 [uc](unknowncheats.me/forum/playerunknown-s-battlegrounds/) 等论坛的公开信息及个人测试。
-- 后座力表格以外的源代码，均作者自己书写。
 - 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。（拿去卖也不介意，但麻烦自行售后）
 - 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
 
