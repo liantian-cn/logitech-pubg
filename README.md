@@ -1,5 +1,5 @@
 # logitech-pubg
-PUBG no-recoil script for Logitech gaming mouse 
+PUBG recoil control script for Logitech gaming mouse 
 绝地求生罗技鼠标宏
 
 
