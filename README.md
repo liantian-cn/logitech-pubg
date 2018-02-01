@@ -1,6 +1,10 @@
+
+
 # logitech-pubg
-PUBG recoil control script for Logitech gaming mouse 
+
 绝地求生罗技鼠标宏
+
+
 
 
 [manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation helped by Siming)
