@@ -1,6 +1,23 @@
+
+
 # logitech-pubg
+```
+2018.2.1
+
+现已停止维护。
+This repo is being deprecated
+
+不要想太多，只是觉得这个东西没什么用了。
+作者(liantian-cn)已经一整个赛季没有使用压枪宏，第一赛季亚服单排 2503。
+压枪宏可以帮你度过初级阶段，但固有的障碍没办法帮你提高更多。热爱游戏，还是要自己熟悉压枪。
+
+谢谢过去在issues中提出意见的各位。
+```
+
 PUBG no-recoil script for Logitech gaming mouse 
 绝地求生罗技鼠标宏
+
+
 
 
 [manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation helped by Siming)
