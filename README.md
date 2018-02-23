@@ -11,6 +11,9 @@ PUBG recoil control script for Logitech gaming mouse
 现已停止维护。
 This repo is being deprecated
 
+
+AFK pubg
+
 不要想太多，只是觉得这个东西没什么用了。
 作者(liantian-cn)已经一整个赛季没有使用压枪宏，第一赛季亚服单排 2503。
 压枪宏可以帮你度过初级阶段，但固有的障碍没办法帮你提高更多。热爱游戏，还是要自己熟悉压枪。
