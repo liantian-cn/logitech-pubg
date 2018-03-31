@@ -5,14 +5,18 @@
 PUBG recoil control script for Logitech gaming mouse 
 
 
-```
+# deprecated
+
+- still safe.
+- still useless.
+- recoil table maybe outdated.
+- can find new recoil table in other [fork](https://github.com/liantian-cn/logitech-pubg/network) ,THANK ALL.
+
 2018.2.1
 
+```
+
 现已停止维护。
-This repo is being deprecated
-
-
-AFK pubg
 
 不要想太多，只是觉得这个东西没什么用了。
 作者(liantian-cn)已经一整个赛季没有使用压枪宏，第一赛季亚服单排 2503。
