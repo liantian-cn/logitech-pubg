@@ -1,3 +1,20 @@
+# outdated/已過時
+
+在2018年5月3日的更新過後，後坐力表已經完全過時，
+
+請關注其他Fork
+
+
+After the update on May 3, 2018, the recoil table is outdated.
+
+pls try other fork
+
+https://github.com/liantian-cn/logitech-pubg/network
+
+
+
+
+
 
 
 # logitech-pubg
