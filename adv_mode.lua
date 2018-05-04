@@ -14,7 +14,7 @@ local ump9_key = 4
 local akm_key = 5
 local m16a4_key = 7
 local m416_key = 8
-local scarl_key = 0
+local scarl_key = nil
 local uzi_key = nil
 local set_off_key = 6
 
@@ -90,7 +90,7 @@ recoil_table["scarl"] = {
 }
 
 recoil_table["uzi"] = {
-    basic={20,20,20,20,20,20,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25},
+    basic={18,18,18,18,18,18,20,20,20,20,20,20,20,20,20,20,20,23,23,23,23,23,23},
     full={0},
     quadruple={0},
     speed = 48
