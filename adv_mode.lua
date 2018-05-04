@@ -35,6 +35,7 @@ local ignore_key = "lalt"
 
 local target_sensitivity = 50
 local scope_sensitivity = 50
+local full_sensitivity = 50
 local scope4x_sensitivity = 50
 
 ---- Obfs setting
@@ -44,7 +45,8 @@ local weapon_speed_mode = false
 local obfs_mode = true
 local interval_ratio = 0.75
 local random_seed = 1
-
+-- local fullmode = false
+local fullmode = false
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
 ---------------- You can fix the value here ------------------------------
@@ -116,12 +118,13 @@ end
 
 local target_scale = calc_sens_scale(target_sensitivity)
 local scope_scale = calc_sens_scale(scope_sensitivity)
+local full_scale = calc_sens_scale(full_sensitivity)
 local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
 
 function recoil_mode()
     if IsKeyLockOn(mode_switch_key) then
         return "quadruple";
-    elseif IsKeyLockOn(full_mode_key) then
+    elseif IsKeyLockOn(full_mode_key) and fullmode then
         return "full"
     else
         return "basic";
@@ -159,6 +162,8 @@ function recoil_value(_weapon,_duration)
         recoil_recovery = recoil_recovery / target_scale
     elseif recoil_mode() == "basic" then
         recoil_recovery = recoil_recovery / scope_scale
+    elseif recoil_mode() == "full" then
+        recoil_recovery = recoil_recovery / full_scale
     elseif recoil_mode() == "quadruple" then
         recoil_recovery= recoil_recovery / scope4x_scale
     end
