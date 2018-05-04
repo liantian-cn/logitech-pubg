@@ -12,10 +12,10 @@ local current_weapon = "none"
 
 local ump9_key = 4
 local akm_key = 5
-local m16a4_key = 7
+local m16a4_key = nil
 local m416_key = 8
 local scarl_key = nil
-local uzi_key = nil
+local uzi_key = 7
 local set_off_key = 6
 
 
@@ -34,7 +34,7 @@ local ignore_key = "lalt"
 --- default is 50.0
 
 local target_sensitivity = 50
-local scope_sensitivity = 50
+local scope_sensitivity = 52
 local full_sensitivity = 50
 local scope4x_sensitivity = 50
 
@@ -55,42 +55,42 @@ local fullmode = false
 local recoil_table = {}
 
 recoil_table["ump9"] = {
-    basic={29,29,29,29,36,29,29,35,37,37,37,37,37,39,39,39,39,39,39,39,41,41,41,41,41,41,41,41,41,39,39,39,39,39,39,39,41,41,41,41},
+    basic={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
     full={0},
     quadruple={0},
     speed = 90
 }
 
 recoil_table["akm"] = {
-    basic={60,40,38,44,48,54,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60},
+    basic={60,40,38,44,48,54,54,55,57,65,53,59,62,58,60},
     full={0},
     quadruple={0},
     speed = 100
 }
 
 recoil_table["m16a4"] = {
-    basic={48,38,40,37,50,58,66,58,64,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62},
+    basic={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65},
     full={0},
     quadruple={0},
     speed = 80
 }
 
 recoil_table["m416"] = {
-    basic={37,34,35,36,37,42,45,45,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44},
+    basic={45,37,38,39,43,46,49,47,52,48,50,52,63,58,64},
     full={0},
     quadruple={},
     speed = 90
 }
 
 recoil_table["scarl"] = {
-    basic={27,31,34,35,41,43,39,39,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44},
+    basic={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
     full={0},
     quadruple={0},
     speed = 100
 }
 
 recoil_table["uzi"] = {
-    basic={18,18,18,18,18,18,20,20,20,20,20,20,20,20,20,20,20,23,23,23,23,23,23},
+    basic={18,18,18,19,19,21,24,24,30,26,30,30,34,34,38},
     full={0},
     quadruple={0},
     speed = 48
