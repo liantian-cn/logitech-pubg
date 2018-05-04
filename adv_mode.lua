@@ -16,15 +16,14 @@ local m16a4_key = 7
 local m416_key = 8
 local scarl_key = 0
 local uzi_key = nil
-
 local set_off_key = 6
 
 
 ---- fire key ----
 
 local fire_key = "F8"
+local full_mode_key = "numlock"
 local mode_switch_key = "capslock"
-
 
 ---- ignore key ----
 ---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
@@ -54,38 +53,44 @@ local random_seed = 1
 local recoil_table = {}
 
 recoil_table["ump9"] = {
-    basic={20,20,20,20,20,20,20,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26},
-    quadruple={},
+    basic={29,29,29,29,36,29,29,35,37,37,37,37,37,39,39,39,39,39,39,39,41,41,41,41,41,41,41,41,41,39,39,39,39,39,39,39,41,41,41,41},
+    full={0},
+    quadruple={0},
     speed = 90
 }
 
 recoil_table["akm"] = {
-    basic={60,36,35,40,47,52,44},
-    quadruple={},
+    basic={60,40,38,44,48,54,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60},
+    full={0},
+    quadruple={0},
     speed = 100
 }
 
 recoil_table["m16a4"] = {
-    basic={48,38,40,37,50,58,66},
+    basic={48,38,40,37,50,58,66,58,64,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62,62},
+    full={0},
     quadruple={0},
     speed = 80
 }
 
 recoil_table["m416"] = {
-    basic={37,34,35,36,37,42},
+    basic={37,34,35,36,37,42,45,45,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44},
+    full={0},
     quadruple={},
     speed = 90
 }
 
 recoil_table["scarl"] = {
-    basic={},
-    quadruple={},
+    basic={27,31,34,35,41,43,39,39,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44,44},
+    full={0},
+    quadruple={0},
     speed = 100
 }
 
 recoil_table["uzi"] = {
-    basic={},
-    quadruple={},
+    basic={20,20,20,20,20,20,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25},
+    full={0},
+    quadruple={0},
     speed = 48
 }
 
@@ -116,6 +121,8 @@ local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
 function recoil_mode()
     if IsKeyLockOn(mode_switch_key) then
         return "quadruple";
+    elseif IsKeyLockOn(full_mode_key) then
+        return "full"
     else
         return "basic";
     end
@@ -211,5 +218,5 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
-
+    
 end
