@@ -10,12 +10,12 @@ local current_weapon = "none"
 
 ---- key bind ----
 
-local ump9_key = 4
+local ump9_key = nil
 local akm_key = 5
-local m16a4_key = nil
+local m16a4_key = 7
 local m416_key = 8
 local scarl_key = nil
-local uzi_key = 7
+local uzi_key = 4
 local set_off_key = 6
 
 
@@ -34,7 +34,7 @@ local ignore_key = "lalt"
 --- default is 50.0
 
 local target_sensitivity = 50
-local scope_sensitivity = 52
+local scope_sensitivity = 50
 local full_sensitivity = 50
 local scope4x_sensitivity = 50
 
@@ -42,7 +42,7 @@ local scope4x_sensitivity = 50
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
 local weapon_speed_mode = false
 -- local obfs_mode = false
-local obfs_mode = true
+local obfs_mode = false
 local interval_ratio = 0.75
 local random_seed = 1
 -- local fullmode = false
@@ -51,6 +51,9 @@ local fullmode = false
 ----------------        Recoil Table        ------------------------------
 ---------------- You can fix the value here ------------------------------
 --------------------------------------------------------------------------
+--- recoil times
+--- if the Recoil compensation is Large or small，You can modify the value of all_recoil_Times or recoil_table{times}
+local all_recoil_times = 1
 
 local recoil_table = {}
 
@@ -58,48 +61,55 @@ recoil_table["ump9"] = {
     basic={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
     full={0},
     quadruple={0},
-    speed = 90
+    speed = 90,
+    times = 0.963
 }
 
 recoil_table["akm"] = {
     basic={56,37,38,40,43,49,49,50,51,50,48,53,56,52,56},
     full={0},
     quadruple={0},
-    speed = 100
+    speed = 100,
+    times = 0.9
 }
 
 recoil_table["m16a4"] = {
-    basic={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65},
+    basic={48,38,40,37,55,58,66,58,64,67,69,61,61,61,65},
     full={0},
     quadruple={0},
-    speed = 80
+    speed = 80,
+    times = 1.1
 }
 
 recoil_table["m416"] = {
-    basic={45,37,38,39,43,46,49,47,52,48,50,52,63,58,64},
+    basic={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
     full={0},
     quadruple={},
-    speed = 90
+    speed = 90,
+    times = 1.05
 }
 
 recoil_table["scarl"] = {
     basic={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
     full={0},
     quadruple={0},
-    speed = 100
+    speed = 100,
+    times = 0.89
 }
 
 recoil_table["uzi"] = {
     basic={18,18,18,19,19,21,24,24,30,26,30,30,34,34,38},
     full={0},
     quadruple={0},
-    speed = 48
+    speed = 48,
+    times = 1.7
 }
 
 recoil_table["none"] = {
     basic={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     quadruple={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-    speed = 60
+    speed = 60,
+    times = 1
 }
 
 
@@ -146,7 +156,9 @@ function recoil_value(_weapon,_duration)
         weapon_speed = recoil_table[_weapon]["speed"]
     end
     -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
-
+    
+    local weapon_times = recoil_table[_weapon]["times"]
+	
     local weapon_intervals = weapon_speed
     if obfs_mode then
 
@@ -155,7 +167,7 @@ function recoil_value(_weapon,_duration)
     end
     -- OutputLogMessage("weapon_intervals = %s\n", weapon_intervals)
 
-    recoil_recovery = weapon_recoil * weapon_intervals / 100
+    recoil_recovery = weapon_recoil * weapon_intervals / 100 * all_recoil_times * weapon_times
     
     -- issues/3
     if IsMouseButtonPressed(2) then
@@ -165,7 +177,7 @@ function recoil_value(_weapon,_duration)
     elseif recoil_mode() == "full" then
         recoil_recovery = recoil_recovery / full_scale
     elseif recoil_mode() == "quadruple" then
-        recoil_recovery= recoil_recovery / scope4x_scale
+        recoil_recovery = recoil_recovery / scope4x_scale
     end
 
     return weapon_intervals,recoil_recovery
