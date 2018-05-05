@@ -1,4 +1,10 @@
+2018.5.7
 
+```
+1.Add holdbreath,When you press lshift,Your recoil will times holdbreathtimes , you can modify the value of holdbreathtimes in recoil_table.
+2.Add full-mode,When your numberlock is on,Your recoil is full_mode recoil , Install the attachments you like, and then fix the recoil_times.
+3.I didn't have much time to test the recoil, It may be possible to use, but it is not accurate.You can fix that by yourself.
+```
 
 # logitech-pubg
 绝地求生罗技鼠标宏
