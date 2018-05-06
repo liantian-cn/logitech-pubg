@@ -10,11 +10,11 @@ local current_weapon = "none"
 
 ---- key bind ----
 
-local ump9_key = nil
+local ump9_key = 4
 local akm_key = 5
 local m16a4_key = 7
 local m416_key = 8
-local scarl_key = 4
+local scarl_key = nil
 local uzi_key = nil
 local set_off_key = 6
 
@@ -48,7 +48,7 @@ local interval_ratio = 0.75
 local random_seed = 1
 
 -- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16.
-local auto_mode = false
+local auto_mode = true
 
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
@@ -70,7 +70,7 @@ recoil_table["ump9"] = {
     holdbreathtimes = 1.25,
 	
     quadruple={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
-    quadrupletimes = 3.41,
+    quadrupletimes = 4*0.963,
 	
     fullof4x={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
     fullof4xtimes = 3.41*0.75,
@@ -79,37 +79,38 @@ recoil_table["ump9"] = {
 }
 
 recoil_table["akm"] = {
-    basic={56,37,38,40,43,49,49,50,51,50,48,53,56,52,56},
+    basic={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
     basictimes = 0.9,
 	
-    full={56,37,38,40,43,49,49,50,51,50,48,53,56,52,56},
+    full={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
     fulltimes = 0.9*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={56,37,38,40,43,49,49,50,51,50,48,53,56,52,56},
-    quadrupletimes = 3.41,
+    quadruple={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
+    quadrupletimes = 4*0.9*0.99,
 	
-    fullof4x={56,37,38,40,43,49,49,50,51,50,48,53,56,52,56},
-    fullof4xtimes = 3.41*0.75,
+    fullof4x={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
+    fullof4xtimes = 4*0.9*0.99*0.75,
 	
     speed = 100,
 }
 
 recoil_table["m16a4"] = {
-    basic={48,38,40,37,55,58,66,58,64,67,69,61,61,61,65},
+    basic={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
     basictimes = 1.1,
 		
-    full={48,38,40,37,55,58,66,58,64,67,69,61,61,61,65},
+    full={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
     fulltimes = 1.1*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={48,38,40,37,55,58,66,58,64,67,69,61,61,61,65},
-    quadrupletimes = 3.41,
+    quadruple={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    quadrupletimes = 1.1*4,
 	
-    fullof4x={48,38,40,37,55,58,66,58,64,67,69,61,61,61,65},
-    fullof4xtimes = 3.41*0.75,
+    fullof4x={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    fullof4xtimes = 4*1.1*0.75,
+
     speed = 80,
 }
 
@@ -123,10 +124,10 @@ recoil_table["m416"] = {
     holdbreathtimes = 1.25,
 	
     quadruple={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
-    quadrupletimes = 3.41,
+    quadrupletimes = 4*1.05,
 	
     fullof4x={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
-    fullof4xtimes = 3.41*0.75,
+    fullof4xtimes = 4*1.05*0.75,
 	
     speed = 90,
 }
@@ -141,10 +142,10 @@ recoil_table["scarl"] = {
     holdbreathtimes = 1.25,
 	
     quadruple={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
-    quadrupletimes = 3.41,
+    quadrupletimes = 4*0.89,
 	
     fullof4x={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
-    fullof4xtimes = 3.41*0.75,
+    fullof4xtimes = 4*0.89*0.75,
 	
     speed = 100,
 }
@@ -159,10 +160,10 @@ recoil_table["uzi"] = {
     holdbreathtimes = 1.25,
 	
     quadruple={18,18,18,19,19,21,24,24,30,26,30,30,34,34,38},
-    quadrupletimes = 1,
+    quadrupletimes = 1.7,
 	
     fullof4x={18,18,18,19,19,21,24,24,30,26,30,30,34,34,38},
-    fullof4xtimes = 1,
+    fullof4xtimes = 1.7*0.75,
 
     speed = 48,
 }
