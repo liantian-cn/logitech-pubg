@@ -115,7 +115,7 @@ PUBG no-recoil script for Logitech gaming mouse
 - If you modify the mouse sensitivity settings in the game menu, you need to modify the settings in script.
 - Mouse dpi does not affect the script. this is built into Logitech driver functionality.
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171015014208.png)
+![](https://github.com/minglich/logitech-pubg/blob/master/img/201856.jpg)
 
 ## 5. Obfs Setting
 
@@ -233,7 +233,7 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 - 如果您修改游戏菜单中的鼠标灵敏度设置，则需要修改设置。
 - 鼠标dpi不影响脚本运行，罗技已经做好了转换。
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171015014208.png)
+![](https://github.com/minglich/logitech-pubg/blob/master/img/201856.jpg)
 
 ## 5. 混淆设置
 
