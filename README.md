@@ -1,10 +1,26 @@
 2018.5.7
 
 ```
-1.Add holdbreath,When you press lshift,Your recoil will times holdbreathtimes , you can modify the value of holdbreathtimes in recoil_table.
-2.Add full-mode,When your numberlock is on,Your recoil is full_mode recoil , Install the attachments you like, and then fix the recoil_times.
-3.I didn't have much time to test the recoil, It may be possible to use, but it is not accurate.You can fix that by yourself.
+1.Add holdbreath,When you press lshift,
+Your recoil will times holdbreathtimes , 
+you can modify the value of holdbreathtimes in recoil_table.
+
+2.Add full-mode,When your numberlock is on,
+Your recoil is full_mode recoil , 
+Install the attachments you like, and then fix the recoil_fulltimes.
+
+3.I didn't have much time to test the recoil, 
+It may be possible to use, 
+but it is not accurate.You can fix that by yourself.
+
+4.add auto-mode,if auto_mode = true ,
+the guns need to switch automatic shooting mode,except m16.
+
+5.the recoil will circle the last value in recoil table
+When you shoot more bullets .
 ```
+
+
 
 # logitech-pubg
 绝地求生罗技鼠标宏
