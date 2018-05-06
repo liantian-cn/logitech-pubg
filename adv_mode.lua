@@ -10,11 +10,11 @@ local current_weapon = "none"
 
 ---- key bind ----
 
-local ump9_key = 4
+local ump9_key = nil
 local akm_key = 5
 local m16a4_key = 7
 local m416_key = 8
-local scarl_key = nil
+local scarl_key = 4
 local uzi_key = nil
 local set_off_key = 6
 
@@ -46,6 +46,10 @@ local weapon_speed_mode = false
 local obfs_mode = false
 local interval_ratio = 0.75
 local random_seed = 1
+
+-- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16.
+local auto_mode = false
+
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
 ---------------- You can fix the value here ------------------------------
@@ -327,7 +331,7 @@ function OnEvent(event, arg)
                 Sleep(30)
             until not IsMouseButtonPressed(1)
             ReleaseKey(fire_key)
-        else
+        elseif((current_weapon == "m16a4") and not IsModifierPressed(ignore_key)) then
             local shoot_duration = 0.0
             repeat
                 local intervals,recovery = recoil_value(current_weapon,shoot_duration)
@@ -336,6 +340,26 @@ function OnEvent(event, arg)
                 Sleep(intervals)
                 shoot_duration = shoot_duration + intervals
             until not IsMouseButtonPressed(1)
+        else
+            if auto_mode then
+                PressKey(fire_key)
+                local shoot_duration = 0.0
+                repeat
+                local intervals,recovery = recoil_value(current_weapon,shoot_duration)
+                MoveMouseRelative(0, recovery )
+                Sleep(intervals)
+                shoot_duration = shoot_duration + intervals
+                until not IsMouseButtonPressed(1)
+            else
+                local shoot_duration = 0.0
+                repeat
+                local intervals,recovery = recoil_value(current_weapon,shoot_duration)
+                PressAndReleaseKey(fire_key)
+                MoveMouseRelative(0, recovery )
+                Sleep(intervals)
+                shoot_duration = shoot_duration + intervals
+                until not IsMouseButtonPressed(1)
+            end
         end
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
