@@ -35,9 +35,9 @@ local ignore_key = "lalt"
 
 local target_sensitivity = 50
 local scope_sensitivity = 50
-local full_sensitivity = 50
+local full_sensitivity = scope_sensitivity
 local scope4x_sensitivity = 50
-local fullofscope4x_sensitivity = 50
+local fullofscope4x_sensitivity = scope4x_sensitivity
 
 ---- Obfs setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
@@ -226,8 +226,8 @@ end
 function recoil_value(_weapon,_duration)
     local _mode = recoil_mode()
     local step = (math.floor(_duration/100)) + 1
-    if step > 40 then
-        step = 40
+    if step > #recoil_table[_weapon][_mode] then
+        step = #recoil_table[_weapon][_mode]
     end
 	
     local weapon_recoil = recoil_table[_weapon][_mode][step]
@@ -238,13 +238,13 @@ function recoil_value(_weapon,_duration)
         weapon_speed = recoil_table[_weapon]["speed"]
     end
     -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
-    
+
     local weapon_basictimes = recoil_table[_weapon]["basictimes"]
     local weapon_fulltimes = recoil_table[_weapon]["fulltimes"]
     local weapon_quadrupletimes = recoil_table[_weapon]["quadrupletimes"]
     local weapon_fullof4xtimes = recoil_table[_weapon]["fullof4xtimes"]
     local weapon_holdbreathtimes = recoil_table[_weapon]["holdbreathtimes"]
-    local weapon_intervals = weapon_speed
+    local weapon_intervals = weapon_speed    
 	
     if obfs_mode then
         local coefficient = interval_ratio * ( 1 + random_seed * math.random())
