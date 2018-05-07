@@ -21,9 +21,10 @@ local set_off_key = 6
 ---- fire key ----
 
 local fire_key = "F8"
-local full_mode_key = "numlock"
-local mode_switch_key = "capslock"
+local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
+local mode_switch_key = "capslock" 
 local hold_breath_key = "lshift"
+local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
 
 ---- ignore key ----
 ---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
@@ -200,6 +201,18 @@ function calc_sens_scale(sensitivity)
     return convert_sens(sensitivity)/convert_sens(50)
 end
 
+function light_on()
+    if not IsKeyLockOn(lighton_key) then
+    PressAndReleaseKey(lighton_key)
+    end
+end
+
+function light_off()
+    if IsKeyLockOn(lighton_key) then
+    PressAndReleaseKey(lighton_key)
+    end
+end
+
 local target_scale = calc_sens_scale(target_sensitivity)
 local scope_scale = calc_sens_scale(scope_sensitivity)
 local full_scale = calc_sens_scale(full_sensitivity)
@@ -212,16 +225,16 @@ function recoil_mode()
 	       return "full";
 		   else
 		   return "basic";
-	    end
-	end	
+        end
+    end	
 	
-	if IsKeyLockOn(mode_switch_key) then
-		   if IsKeyLockOn(full_mode_key) then
+    if IsKeyLockOn(mode_switch_key) then
+        if IsKeyLockOn(full_mode_key) then
 		   return "fullof4x"
 		   else
 		   return "quadruple"
-	    end 
-	end		
+        end 
+    end		
 end
 		   
 function recoil_value(_weapon,_duration)
@@ -311,19 +324,19 @@ function OnEvent(event, arg)
     end
 
     if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) then
-        current_weapon = "none"
+        current_weapon = "none" light_off()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key) then
-        current_weapon = "akm"
+        current_weapon = "akm" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key) then
-        current_weapon = "m16a4"
+        current_weapon = "m16a4" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key) then
-        current_weapon = "m416"
+        current_weapon = "m416" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == ump9_key) then
-        current_weapon = "ump9"
+        current_weapon = "ump9" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == uzi_key) then
-        current_weapon = "uzi"
+        current_weapon = "uzi" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key) then
-        current_weapon = "scarl"
+        current_weapon = "scarl" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
         if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
