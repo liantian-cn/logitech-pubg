@@ -31,15 +31,25 @@ local set_off_gkey = nil
 ---- fire key ----
 
 local fire_key = "F8"
+
+---- function setting ----
+-- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16 single.
+
+local auto_mode = true
+
+-- you can close these by true to false
+
+local hold_breath_mode = true
+local full_mode = true
+
+local hold_breath_key = "lshift"
 local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
 local mode_switch_key = "capslock" 
-local hold_breath_key = "lshift"
 local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
 
----- ignore key ----
 ---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
 
-local ignore_key = "lalt"
+local ignore_key = "lalt" --- ignore key
 
 --- Sensitivity in Game
 --- default is 50.0
@@ -58,13 +68,6 @@ local obfs_mode = false
 local interval_ratio = 0.75
 local random_seed = 1
 
-
--- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16.
-local auto_mode = true
--- you can close these by true to false
-local hold_breath_mode = true
-local full_mode = true
-
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
 ---------------- You can fix the value here ------------------------------
@@ -76,18 +79,18 @@ local all_recoil_times = 1
 local recoil_table = {}
 
 recoil_table["ump9"] = {
-    basic={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
+    basic={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
     basictimes = 0.963,
 	
-    full={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
+    full={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
     fulltimes = 0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
+    quadruple={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
     quadrupletimes = 4*0.963,
 	
-    fullof4x={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39},
+    fullof4x={28,30,30,30,37,30,31,36,37,37,37,40,40,39,39,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
     fullof4xtimes = 3.41*0.75,
 	
     speed = 90,
