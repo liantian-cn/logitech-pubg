@@ -18,6 +18,16 @@ local scarl_key = nil
 local uzi_key = nil
 local set_off_key = 6
 
+---- keyboard ---- Only Support logitech G Keyboard
+
+local ump9_gkey = nil  ---1 is use F1.
+local akm_gkey = nil
+local m16a4_gkey = nil
+local m416_gkey = nil
+local scarl_gkey = nil
+local uzi_gkey = nil
+local set_off_gkey = nil
+
 ---- fire key ----
 
 local fire_key = "F8"
@@ -48,8 +58,12 @@ local obfs_mode = false
 local interval_ratio = 0.75
 local random_seed = 1
 
+
 -- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16.
 local auto_mode = true
+-- you can close these by true to false
+local hold_breath_mode = true
+local full_mode = true
 
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
@@ -221,7 +235,7 @@ local fullofscope4x_scale = calc_sens_scale(fullofscope4x_sensitivity)
 
 function recoil_mode()
     if not IsKeyLockOn(mode_switch_key) then
-        if IsKeyLockOn(full_mode_key) then
+        if IsKeyLockOn(full_mode_key) and full_mode then
 	       return "full";
 		   else
 		   return "basic";
@@ -229,7 +243,7 @@ function recoil_mode()
     end	
 	
     if IsKeyLockOn(mode_switch_key) then
-        if IsKeyLockOn(full_mode_key) then
+        if IsKeyLockOn(full_mode_key) and full_mode then
 		   return "fullof4x"
 		   else
 		   return "quadruple"
@@ -271,15 +285,15 @@ function recoil_value(_weapon,_duration)
     if recoil_mode() == "basic" then
     recoil_recovery = recoil_recovery * all_recoil_times * weapon_basictimes
     end
-    if recoil_mode() == "basic" and IsModifierPressed(hold_breath_key) then
-    recoil_recovery = recoil_recovery * weapon_holdbreathtimes  * all_recoil_times * weapon_basictimes
+    if recoil_mode() == "basic" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
+    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * all_recoil_times * weapon_basictimes
     end
 
     if recoil_mode() == "full" then
     recoil_recovery = recoil_recovery * all_recoil_times * weapon_fulltimes
     end
-    if recoil_mode() == "full" and IsModifierPressed(hold_breath_key) then
-    recoil_recovery = recoil_recovery * weapon_holdbreathtimes  * all_recoil_times * weapon_fulltimes
+    if recoil_mode() == "full" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
+    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * all_recoil_times * weapon_fulltimes
     end
 
     if recoil_mode() == "quadruple" then
@@ -299,7 +313,7 @@ function recoil_value(_weapon,_duration)
         recoil_recovery = recoil_recovery / full_scale
     elseif recoil_mode() == "quadruple" then
         recoil_recovery = recoil_recovery / scope4x_scale
-	elseif recoil_mode() == "fullof4x" then
+    elseif recoil_mode() == "fullof4x" then
         recoil_recovery = recoil_recovery / fullofscope4x_scale
     end
 
@@ -323,19 +337,26 @@ function OnEvent(event, arg)
         ReleaseMouseButton(1)
     end
 
-    if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) then
+    if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) 
+    or (event == "G_PRESSED" and arg == set_off_gkey) then
         current_weapon = "none" light_off()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key)
+    or (event == "G_PRESSED" and arg == akm_gkey) then
         current_weapon = "akm" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key)
+    or (event == "G_PRESSED" and arg == m16a4_gkey) then
         current_weapon = "m16a4" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key)
+    or (event == "G_PRESSED" and arg == m416_gkey) then
         current_weapon = "m416" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == ump9_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == ump9_key)
+    or (event == "G_PRESSED" and arg == ump9_gkey) then
         current_weapon = "ump9" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == uzi_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == uzi_key)
+    or (event == "G_PRESSED" and arg == uzi_gkey) then
         current_weapon = "uzi" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
+    or (event == "G_PRESSED" and arg == scarl_gkey) then
         current_weapon = "scarl" light_on()
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
