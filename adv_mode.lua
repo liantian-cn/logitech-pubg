@@ -32,7 +32,25 @@ local set_off_gkey = nil
 
 local fire_key = "F8"
 
----- function setting ----
+---- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
+
+local ignore_key = "lalt" --- ignore key
+local hold_breath_key = "lshift"
+
+---- only can use "numlock", "capslock", "scrolllock"
+
+local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
+local mode_switch_key = "capslock" 
+local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
+
+--- Your Sensitivity in Game 
+
+local vertical_sensitivity = 0.7 --- default is 0.7
+local target_sensitivity = 50 --- default is 50.0
+local scope_sensitivity = 50 --- default is 50.0
+local scope4x_sensitivity = 50 --- default is 50.0
+
+---- function ----
 -- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16 single.
 
 local auto_mode = true
@@ -41,24 +59,6 @@ local auto_mode = true
 
 local hold_breath_mode = true
 local full_mode = true
-
-local hold_breath_key = "lshift"
-local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
-local mode_switch_key = "capslock" 
-local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
-
----- can use "lalt", "ralt", "alt"  "lshift", "rshift", "shift"  "lctrl", "rctrl", "ctrl"
-
-local ignore_key = "lalt" --- ignore key
-
---- Sensitivity in Game
---- default is 50.0
-
-local target_sensitivity = 50
-local scope_sensitivity = 50
-local full_sensitivity = scope_sensitivity
-local scope4x_sensitivity = 50
-local fullofscope4x_sensitivity = scope4x_sensitivity
 
 ---- Obfs setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
@@ -97,7 +97,7 @@ recoil_table["ump9"] = {
 }
 
 recoil_table["akm"] = {
-    basic={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
+    basic={56,40,38,44,48,55,56,61,65,65,67,68,67,71,74,70,65,66,72,74,72,71,70,70,70,72,74,76,72},
     basictimes = 0.9,
 	
     full={56,40,38,44,48,55,56,61,65,67,62,68,67,69,71,67,63,67,70,66,58,59,57,60,68,57,61,66,59},
@@ -114,55 +114,56 @@ recoil_table["akm"] = {
     speed = 100,
 }
 
+
 recoil_table["m16a4"] = {
-    basic={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    basic={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66,60},
     basictimes = 1.1,
 		
-    full={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    full={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66,60},
     fulltimes = 1.1*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    quadruple={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66,60},
     quadrupletimes = 1.1*4,
 	
-    fullof4x={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66},
+    fullof4x={48,38,40,37,50,58,66,58,64,62,69,60,61,61,65,63,63,64,66,60},
     fullof4xtimes = 4*1.1*0.75,
 
     speed = 80,
 }
 
 recoil_table["m416"] = {
-    basic={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
+    basic={49,37,38,39,43,46,47,47,48,49,50,49,55,56,58,60},
     basictimes = 1.05,
 	
-    full={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
+    full={49,37,38,39,43,46,47,47,48,49,50,49,55,56,58,60},
     fulltimes = 1.05*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
+    quadruple={49,37,38,39,43,46,47,47,48,49,50,49,55,56,58,60},
     quadrupletimes = 4*1.05,
 	
-    fullof4x={46,38,39,40,44,45,48,47,47,45,50,52,55,54,59},
+    fullof4x={49,37,38,39,43,46,47,47,48,49,50,49,55,56,58,60},
     fullof4xtimes = 4*1.05*0.75,
 	
     speed = 90,
 }
 
 recoil_table["scarl"] = {
-    basic={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
+    basic={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
     basictimes = 0.89,
 
-    full={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
+    full={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
     fulltimes = 0.89*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
+    quadruple={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
     quadrupletimes = 4*0.89,
 	
-    fullof4x={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51},
+    fullof4x={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
     fullof4xtimes = 4*0.89*0.75,
 	
     speed = 100,
@@ -232,9 +233,7 @@ end
 
 local target_scale = calc_sens_scale(target_sensitivity)
 local scope_scale = calc_sens_scale(scope_sensitivity)
-local full_scale = calc_sens_scale(full_sensitivity)
 local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
-local fullofscope4x_scale = calc_sens_scale(fullofscope4x_sensitivity)
 
 function recoil_mode()
     if not IsKeyLockOn(mode_switch_key) then
@@ -284,27 +283,28 @@ function recoil_value(_weapon,_duration)
     -- OutputLogMessage("weapon_intervals = %s\n", weapon_intervals)
 
     recoil_recovery = weapon_recoil * weapon_intervals / 100 
-	
+    recoil_times = all_recoil_times * 0.7 / vertical_sensitivity 
+
     if recoil_mode() == "basic" then
-    recoil_recovery = recoil_recovery * all_recoil_times * weapon_basictimes
+    recoil_recovery = recoil_recovery * recoil_times * weapon_basictimes
     end
     if recoil_mode() == "basic" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
-    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * all_recoil_times * weapon_basictimes
+    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * recoil_times * weapon_basictimes
     end
 
     if recoil_mode() == "full" then
-    recoil_recovery = recoil_recovery * all_recoil_times * weapon_fulltimes
+    recoil_recovery = recoil_recovery * recoil_times * weapon_fulltimes
     end
     if recoil_mode() == "full" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
-    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * all_recoil_times * weapon_fulltimes
+    recoil_recovery = recoil_recovery * weapon_holdbreathtimes * recoil_times * weapon_fulltimes
     end
 
     if recoil_mode() == "quadruple" then
-    recoil_recovery = recoil_recovery * all_recoil_times * weapon_quadrupletimes
+    recoil_recovery = recoil_recovery * recoil_times * weapon_quadrupletimes
     end
 	
     if recoil_mode() == "fullof4x" then
-    recoil_recovery = recoil_recovery * all_recoil_times * weapon_fullof4xtimes
+    recoil_recovery = recoil_recovery * recoil_times * weapon_fullof4xtimes
     end
     
     -- issues/3
@@ -313,11 +313,11 @@ function recoil_value(_weapon,_duration)
     elseif recoil_mode() == "basic" then
         recoil_recovery = recoil_recovery / scope_scale
     elseif recoil_mode() == "full" then
-        recoil_recovery = recoil_recovery / full_scale
+        recoil_recovery = recoil_recovery / scope_scale
     elseif recoil_mode() == "quadruple" then
         recoil_recovery = recoil_recovery / scope4x_scale
     elseif recoil_mode() == "fullof4x" then
-        recoil_recovery = recoil_recovery / fullofscope4x_scale
+        recoil_recovery = recoil_recovery / scope4x_scale
     end
 
     return weapon_intervals,recoil_recovery
