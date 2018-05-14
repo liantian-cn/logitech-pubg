@@ -43,6 +43,13 @@ local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
 local mode_switch_key = "capslock" 
 local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
 
+--- fastloot setting---
+--- Press fast_loot_key and click Left mouse button ---
+
+local fastloot = true ---if you don't need it, you can close it by true to false.
+local fast_loot_key = "lctrl" 
+local move = 40 ----1920*1080
+
 --- Your Sensitivity in Game 
 
 local vertical_sensitivity = 0.7 --- default is 0.7
@@ -402,5 +409,54 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
-    
+    while (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and IsModifierPressed(fast_loot_key) and fastloot) do
+        Sleep(10)
+        PressMouseButton(1)
+        Sleep(10)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        Sleep(2)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        Sleep(2)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        Sleep(2)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        Sleep(2)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        MoveMouseRelative(move, 0)
+        Sleep(10)
+        ReleaseMouseButton(1)
+        Sleep(10)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        Sleep(2)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        Sleep(2)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        Sleep(2)
+        MoveMouseRelative(-move, 0)
+        Sleep(2)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        MoveMouseRelative(-move, 0)
+        Sleep(10)            
+        if not IsModifierPressed(fast_loot_key) then
+        break
+        end
+    end
 end
