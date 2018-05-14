@@ -1,3 +1,11 @@
+2018.5.15
+1.Add fastloot，when you press fast_loot_key and click Left mouse button，
+script will start fastloot untill release fast_loot_key (default is left ctrl)
+
+2.Add vertical_sensitivity
+
+3.Support Logitech G keyboard.
+
 2018.5.7
 
 ```
