@@ -1,3 +1,5 @@
+## Change Log
+
 2018.5.15
 
 ```
@@ -30,73 +32,10 @@ the guns need to switch automatic shooting mode,except m16.
 5.the recoil will circle the last value in recoil table
 When you shoot more bullets .
 ```
+## How to make your fullmode-times
 
-
-
-# logitech-pubg
-绝地求生罗技鼠标宏
-PUBG recoil control script for Logitech gaming mouse 
-
-
-# deprecated
-
-- still safe.
-- still useless.
-- recoil table maybe outdated.
-- can find new recoil table in other [fork](https://github.com/liantian-cn/logitech-pubg/network) ,THANK ALL.
-
-2018.2.1
-
-```
-
-现已停止维护。
-
-不要想太多，只是觉得这个东西没什么用了。
-作者(liantian-cn)已经一整个赛季没有使用压枪宏，第一赛季亚服单排 2503。
-压枪宏可以帮你度过初级阶段，但固有的障碍没办法帮你提高更多。热爱游戏，还是要自己熟悉压枪。
-
-谢谢过去在issues中提出意见的各位。
-```
-
-PUBG no-recoil script for Logitech gaming mouse 
-
-
-
-
-[manual](https://github.com/liantian-cn/logitech-pubg#ay-your-own-risk) (English translation helped by Siming)
-[使用说明](https://github.com/liantian-cn/logitech-pubg#风险自负)
-
-
-#  AT YOUR OWN RISK
-
-
-- `logitech gaming software` never triggered any banwaves in the past, but this doesn't mean there won't be any banwaves in the future.
-
-
-# ChangeLog
-
-
-2017.12.23
-
-- update for 3.5.5.6 (1.0 release)  [Script Effect](https://github.com/liantian-cn/logitech-pubg/issues/47)
-
-2017.10.18
-
-- Fixed macro disable logic, optimized for tossing grenades
-- Added hotkey to disable macro named "ignore_key", default to "shift"
-
-2017.10.15
-
-- Added sensitivity setting.
-
-
-
-2017.10.14 
-
-- Added uzi and scar-l recoil table.
-- The default fire button is changed to "pause".
-- Removed the full attachment mode because the chances of geting all attachments is low, and lacks testing.
-- Rewriting the logic: now the trigger speed is on par with the weapon firing rate.
+![](https://github.com/minglich/logitech-pubg/blob/master/img/times.png)
+I think you can understand this pic
 
 # How To Use 
 
@@ -109,8 +48,6 @@ PUBG no-recoil script for Logitech gaming mouse
 
 
 # How to Edit Setting
-
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
 ## 1. Assign buttons to weapon
 
@@ -121,17 +58,15 @@ PUBG no-recoil script for Logitech gaming mouse
 
 ## 2. Set the fire key and the mode switch key. 
 
-
-- unset the `Fire` binding in game from your mouse left button, and set it to `Pause` key. This needs to be consistent between the script and the game setting.
+- unset the `Fire` binding in game from your mouse left button, and set it to `F8` key. This needs to be consistent between the script and the game setting.
 - When the `mode switch key` is pressed, recoil is magnified by  3-4x, consistent with 4x scope mode.
-- By default in the script , `fire key` is `pause` ,  `mode switch key` is `capslock`.
+- By default in the script , `fire key` is `F8` ,  `mode switch key` is `capslock`.
 - **always keep your weapons in single-fire mode. The script will automatically fire in auto mode, including M16A1s**
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
+![](https://github.com/minglich/logitech-pubg/blob/master/img/123.png)
 
 
 ## 3. Ignore Key (script pause)
-
 
 - You can set a ignore Key, and when the key is pressed, the script pauses.
 - Limited by LGS, you can only select "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" and Logitech G Key(Logitech game keyboard only)
@@ -229,8 +164,6 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 
 # 编辑设置
-
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014104238.png)
   
 ## 1.  为枪械分配按键编号
  
@@ -243,10 +176,10 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 - 开火`fire key`按键需要和游戏内设置一致，并在游戏内取消鼠标左键的绑定。
 - 模式切换键`mode switch key`按下时，后座力放大3~4倍，便于使用四倍镜。
-- 默认情况，开火键是"Pause"，方向键上方最右一个。使用大小写锁定键切换4倍模式。
+- 默认情况，开火键是"F8"，方向键上方最右一个。使用大小写锁定键切换4倍模式。
 - 所有武器使用单发模式，这个脚本会将单发转化为全自动模式，包括M16a1
 
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014110324.png)
+![](https://github.com/minglich/logitech-pubg/blob/master/img/123.png)
 
 
 ## 3. 忽略键
