@@ -292,14 +292,14 @@ function recoil_value(_weapon,_duration)
     recoil_recovery = weapon_recoil * weapon_intervals / 100 
     recoil_times = all_recoil_times * 0.7 / vertical_sensitivity 
 
-    if recoil_mode() == "basic" then
+    if recoil_mode() == "basic" and not IsModifierPressed(hold_breath_key) then
     recoil_recovery = recoil_recovery * recoil_times * weapon_basictimes
     end
     if recoil_mode() == "basic" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
     recoil_recovery = recoil_recovery * weapon_holdbreathtimes * recoil_times * weapon_basictimes
     end
 
-    if recoil_mode() == "full" then
+    if recoil_mode() == "full" and not IsModifierPressed(hold_breath_key) then
     recoil_recovery = recoil_recovery * recoil_times * weapon_fulltimes
     end
     if recoil_mode() == "full" and hold_breath_mode and IsModifierPressed(hold_breath_key) then
@@ -368,7 +368,7 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
     or (event == "G_PRESSED" and arg == scarl_gkey) then
         current_weapon = "scarl" light_on()
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and not IsModifierPressed(fast_loot_key)) then
         -- button 1 : Shoot
         if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
             PressKey(fire_key)
@@ -410,53 +410,17 @@ function OnEvent(event, arg)
         ReleaseKey(fire_key)
     end
     while (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and IsModifierPressed(fast_loot_key) and fastloot) do
-        Sleep(10)
-        PressMouseButton(1)
-        Sleep(10)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        Sleep(2)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        Sleep(2)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        Sleep(2)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        Sleep(2)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        MoveMouseRelative(move, 0)
-        Sleep(10)
         ReleaseMouseButton(1)
-        Sleep(10)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
+        PressMouseButton(1)
+        for i = 0, 14 do
+        MoveMouseRelative(move, 0)
         Sleep(2)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        Sleep(2)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        Sleep(2)
-        MoveMouseRelative(-move, 0)
-        Sleep(2)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        MoveMouseRelative(-move, 0)
-        Sleep(10)            
-        if not IsModifierPressed(fast_loot_key) then
-        break
         end
+        ReleaseMouseButton(1)
+        for i = 0, 14 do
+        MoveMouseRelative(-move, 0)
+        Sleep(2)
+        end
+        Sleep(10) 
     end
 end
