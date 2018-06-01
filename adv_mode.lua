@@ -159,18 +159,18 @@ recoil_table["m416"] = {
 }
 
 recoil_table["scarl"] = {
-    basic={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
+    basic={44,28,32,40,44, 45,48,48,46,53, 54,56,58,57,56, 62},
     basictimes = 0.89,
 
-    full={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
+    full={44,28,32,40,44, 45,48,48,46,53, 54,56,58,57,56, 62},
     fulltimes = 0.89*0.75,
 	
     holdbreathtimes = 1.25,
 	
-    quadruple={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
+    quadruple={44,28,32,40,44, 45,48,48,46,53, 54,56,58,57,56, 62},
     quadrupletimes = 4*0.89,
 	
-    fullof4x={40,28,35,44,44,45,46,46,46,48,49,45,44,44,51,55},
+    fullof4x={44,28,32,40,44, 45,48,48,46,53, 54,56,58,57,56, 62},
     fullof4xtimes = 4*0.89*0.75,
 	
     speed = 100,
@@ -224,18 +224,6 @@ end
 
 function calc_sens_scale(sensitivity)
     return convert_sens(sensitivity)/convert_sens(50)
-end
-
-function light_on()
-    if not IsKeyLockOn(lighton_key) then
-    PressAndReleaseKey(lighton_key)
-    end
-end
-
-function light_off()
-    if IsKeyLockOn(lighton_key) then
-    PressAndReleaseKey(lighton_key)
-    end
 end
 
 local target_scale = calc_sens_scale(target_sensitivity)
@@ -349,25 +337,25 @@ function OnEvent(event, arg)
 
     if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) 
     or (event == "G_PRESSED" and arg == set_off_gkey) then
-        current_weapon = "none" light_off()
+        current_weapon = "none"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key)
     or (event == "G_PRESSED" and arg == akm_gkey) then
-        current_weapon = "akm" light_on()
+        current_weapon = "akm"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key)
     or (event == "G_PRESSED" and arg == m16a4_gkey) then
-        current_weapon = "m16a4" light_on()
+        current_weapon = "m16a4"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key)
     or (event == "G_PRESSED" and arg == m416_gkey) then
-        current_weapon = "m416" light_on()
+        current_weapon = "m416"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == ump9_key)
     or (event == "G_PRESSED" and arg == ump9_gkey) then
-        current_weapon = "ump9" light_on()
+        current_weapon = "ump9"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == uzi_key)
     or (event == "G_PRESSED" and arg == uzi_gkey) then
-        current_weapon = "uzi" light_on()
+        current_weapon = "uzi"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
     or (event == "G_PRESSED" and arg == scarl_gkey) then
-        current_weapon = "scarl" light_on()
+        current_weapon = "scarl"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and not IsModifierPressed(fast_loot_key)) then
         -- button 1 : Shoot
         if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
@@ -422,5 +410,14 @@ function OnEvent(event, arg)
         Sleep(2)
         end
         Sleep(10) 
+    end
+    if (current_weapon == "none") then
+        if IsKeyLockOn(lighton_key) then
+        PressAndReleaseKey(lighton_key)
+        end 
+    else
+        if not IsKeyLockOn(lighton_key) then
+        PressAndReleaseKey(lighton_key)
+        end
     end
 end
