@@ -334,7 +334,7 @@ function OnEvent(event, arg)
         current_weapon = "scarl"
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
-        if ((current_weapon == "none")) then
+        if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
             PressKey(fire_key)
             repeat
                 Sleep(30)
