@@ -45,7 +45,7 @@ local move = 40 ----1920*1080
 
 ---- only can use "numlock", "capslock", "scrolllock"
 
-local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode.
+local full_mode_key = "numlock"   ---numlock lamp on,recoil is full_mode."numlock" 
 local mode_switch_key = "capslock" 
 local lighton_key = "scrolllock"  ---start script,scrolllock lamp will be on.close script ,scrolllock lamp will be off.
 
@@ -80,22 +80,16 @@ local all_recoil_times = 1
 local recoil_table = {}
 
 recoil_table["akm"] = {
-    basic={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    basic={56,41,42,46,48, 58,58.5,62,64,67, 68,71,70,74.4,77, 74},
     basictimes = 1.04,
-	
-    full={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    full={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 74},
     fulltimes = 1.04*0.75,
-
-    quadruple={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    quadruple={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 74},
     quadrupletimes = 4*1.04,
-	
-    fullof4x={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    fullof4x={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 74},
     fullof4xtimes = 4*1.04*0.75,
-	
     speed = 100,
-
     maxbullets = 40,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -103,20 +97,14 @@ recoil_table["akm"] = {
 recoil_table["m416"] = {
     basic={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},	
     basictimes = 1.08,
-
     full={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
     fulltimes = 1.08*0.75,	
-    
     quadruple={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
-    quadrupletimes = 4*1.08,
-	
+    quadrupletimes = 4*1.08*0.9,
     fullof4x={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
     fullof4xtimes = 4*1.08*0.75,
-	
     speed = 89.98,
-
     maxbullets = 40,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -124,20 +112,14 @@ recoil_table["m416"] = {
 recoil_table["scarl"] = {
     basic={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     basictimes = 1,
-
     full={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     fulltimes = 1*0.75,
-	
     quadruple={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     quadrupletimes = 4*1,
-	
     fullof4x={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     fullof4xtimes = 4*1*0.75,
-	
     speed = 96,
-
     maxbullets = 40,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -145,20 +127,14 @@ recoil_table["scarl"] = {
 recoil_table["ump9"] = {
     basic={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,42,42, 43,40,41,43,40, 40,40,41,42},
     basictimes = 1,
-	
     full={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     fulltimes = 0.75*0.9,
-
     quadruple={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     quadrupletimes = 4*1*0.97,
-	
     fullof4x={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     fullof4xtimes = 4*0.75,
-	
     speed = 92,
-
     maxbullets = 40,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -166,19 +142,14 @@ recoil_table["ump9"] = {
 recoil_table["uzi"] = { 
     basic={8.5,8.5,9,9,9,10.5,10.5,10.5,12,13,13,14.5,15.5,16,17.5,18.5,19,19.5,19,19.5,19,19,19.5,20},
     basictimes = 2,
-
     full={4.8,4.8,5,5,5,6,6,6,6.2,6.8,6.8,7.6,7.6,7.9,8.2,8.2,8.2,8.7,8.7,9,9.5,9.5,9.6,9.6},
     fulltimes = 2,
-	
     quadruple={8.5,8.5,9,9,9,10.5,10.5,10.5,12,13,13,14.5,15.5,16,17.5,18.5,19,19.5,19,19.5,19,19,19.5,20},
     quadrupletimes = 2,
-	
     fullof4x={4.8,4.8,5,5,5,6,6,6,6.2,6.8,6.8,7.6,7.6,7.9,8.2,8.2,8.2,8.7,8.7,9,9.5,9.5,9.6,9.6},
     fullof4xtimes = 2,
-
     speed = 48,
     maxbullets = 35,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -186,22 +157,15 @@ recoil_table["uzi"] = {
 recoil_table["m16a4"] = {
     basic={42.3,31.2,32.4,42.3,50.4, 54.1,62.1,60,62.5,65.5, 63,62.1,64.4,64.4,65.25,63.9},
     basictimes = 1.23,
-		
     full={42.3,31.2,32.4,42.3,50.4,54.1,62.1,60,62.5,65.5,63,62.1,64.4,64.4,65.25,63.9},
     fulltimes = 1.23*0.77,
-	
     quadruple={42.3,31.2,32.4,42.3,50.4,54.1,62.1,60,62.5,65.5,63,62.1,64.4,64.4,65.25,63.9},
     quadrupletimes = 1.23*4,
-	
     fullof4x={42.3,31.2,32.4,42.3,50.4,54.1,62.1,60,62.5,65.5,63,62.1,64.4,64.4,65.25,63.9},
     fullof4xtimes = 4*1.23*0.75,
-
     speed = 80,
-
     maxbullets = 40,
-
     clickspeed = 40,
-
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
 }
@@ -329,7 +293,6 @@ function OnEvent(event, arg)
         end
     elseif event == "PROFILE_DEACTIVATED" then
         ReleaseKey(fire_key)
-        ReleaseMouseButton(1)
     end
 
     if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) 
@@ -361,10 +324,7 @@ function OnEvent(event, arg)
                 Sleep(30)
             until not IsMouseButtonPressed(1)
             ReleaseKey(fire_key)
-        elseif(current_weapon == "m16a4")
-        or (current_weapon == "sks")
-        or (current_weapon == "mini")
-        or (current_weapon == "slr") then
+        elseif(current_weapon == "m16a4") then
             ReleaseMouseButton(1)
             local shoot_duration = 0.0
             repeat
@@ -402,7 +362,6 @@ function OnEvent(event, arg)
             until not IsMouseButtonPressed(1)
             ReleaseKey(fire_key)
         end
-
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
