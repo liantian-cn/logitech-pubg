@@ -1,5 +1,36 @@
 ## Change Log
 
+2018.6.6
+
+```
+1.add auto_reload.
+
+2.upload weaponspeed_mode.lua , it will be more fluent than adv_mode.lua. 
+
+3.fix some recoil.
+
+something i want tell you:
+
+you can modify the basictimes to reduce or increase the recoil.
+for example: 
+
+if "basictims = 1"
+you can make 
+"basictimes = 1 * 0.99" to reduce the recoil 
+or 
+"basictimes = 1 * 1.01" to increase the recoil 
+
+test it in game until fit your control.
+
+so is 4x recoil.
+
+fix recoil-table is a very boring experience ,
+and i only have little time to playgame.
+
+so just do it by yourself.
+
+```
+
 2018.5.15
 
 ```
