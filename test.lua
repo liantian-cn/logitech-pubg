@@ -1,10 +1,4 @@
 --------------------------------------------------------------------------
-----------------        Basic Variable       -----------------------------
-----------------         Do not edit                 ---------------------
---------------------------------------------------------------------------
-local current_weapon = "none"
-
---------------------------------------------------------------------------
 ----------------        Basic Setting       ------------------------------
 --------------------------------------------------------------------------
 
@@ -29,6 +23,7 @@ local uzi_gkey = 2
 local set_off_gkey = nil
 
 ---- fire_key ----
+
 local fire_key = "F8"
 
 ---- control_key ----
@@ -85,17 +80,17 @@ local all_recoil_times = 1
 local recoil_table = {}
 
 recoil_table["akm"] = {
-    basic={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77,77},
+    basic={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
     basictimes = 1.04,
 	
-    full={48,32,32,36,37,42,46,46,50,52,50,51,50,53,55.5},
-    fulltimes = 1,
+    full={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    fulltimes = 1.04*0.75,
 
-    quadruple={58,41,42,46,50, 58,58.5,64,68,68, 70,71,70,74.4,77},
-    quadrupletimes = 4*0.90,
+    quadruple={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    quadrupletimes = 4*1.04,
 	
-    fullof4x={48,32,32,36,37,42,46,46,50,52,50,51,50,53,55.5},
-    fullof4xtimes = 4*0.75,
+    fullof4x={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 77},
+    fullof4xtimes = 4*1.04*0.75,
 	
     speed = 100,
 
@@ -106,17 +101,17 @@ recoil_table["akm"] = {
 }
 
 recoil_table["m416"] = {
-    basic={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1,53},	
+    basic={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},	
     basictimes = 1.08,
 
-    full={28.4,21.8,21.8,24.5,27, 29,29.5,29.5,29.5,30.8, 31.5,30.8,32.5,34.5,35},
-    fulltimes = 1,	
+    full={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    fulltimes = 1.08*0.75,	
     
-    quadruple={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1,53},
-    quadrupletimes = 4*1*1.08,
+    quadruple={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    quadrupletimes = 4*1.08,
 	
-    fullof4x={28.4,21.8,21.8,24.5,27, 29,29.5,29.5,29.5,30.8, 31.5,30.8,32.5,34.5,35},
-    fullof4xtimes = 4*1,
+    fullof4x={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    fullof4xtimes = 4*1.08*0.75,
 	
     speed = 89.98,
 
@@ -127,16 +122,16 @@ recoil_table["m416"] = {
 }
 
 recoil_table["scarl"] = {
-    basic={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55,55	},
+    basic={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     basictimes = 1,
 
-    full={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55,55},
+    full={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     fulltimes = 1*0.75,
 	
-    quadruple={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55,55},
+    quadruple={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     quadrupletimes = 4*1,
 	
-    fullof4x={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55,55},
+    fullof4x={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
     fullof4xtimes = 4*1*0.75,
 	
     speed = 96,
@@ -148,16 +143,16 @@ recoil_table["scarl"] = {
 }
 
 recoil_table["ump9"] = {
-    basic={30,31,32,34,37,35,35,36,42,38,39,42,42,41,41,41,41,42,42,42,43,40,41,43,40,40,40,41,42},
+    basic={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,42,42, 43,40,41,43,40, 40,40,41,42},
     basictimes = 1,
 	
-    full={30,31,32,34,37,35,35,36,42,38,39,42,42,41,41,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
+    full={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     fulltimes = 0.75*0.9,
 
-    quadruple={30,31,32,34,37,35,35,36,42,38,39,42,42,41,41,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
+    quadruple={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     quadrupletimes = 4*1*0.97,
 	
-    fullof4x={30,31,32,34,37,35,35,36,42,38,39,42,42,41,41,41,41,42,44,42,43,40,41,44,40,40,41,42,43},
+    fullof4x={30,31,32,34,37, 35,35,36,42,38, 39,42,42,41,41, 41,41,42,44,42, 43,40,41,44,40, 40,41,42,43},
     fullof4xtimes = 4*0.75,
 	
     speed = 92,
@@ -196,10 +191,10 @@ recoil_table["m16a4"] = {
     fulltimes = 1.23*0.77,
 	
     quadruple={42.3,31.2,32.4,42.3,50.4,54.1,62.1,60,62.5,65.5,63,62.1,64.4,64.4,65.25,63.9},
-    quadrupletimes = 1.23*4*0.88,
+    quadrupletimes = 1.23*4,
 	
     fullof4x={42.3,31.2,32.4,42.3,50.4,54.1,62.1,60,62.5,65.5,63,62.1,64.4,64.4,65.25,63.9},
-    fullof4xtimes = 4*1.23*0.88*0.75,
+    fullof4xtimes = 4*1.23*0.75,
 
     speed = 80,
 
@@ -232,16 +227,16 @@ function recoil_mode()
     if not IsKeyLockOn(mode_switch_key) then
         if IsKeyLockOn(full_mode_key) and full_mode then
 	       return "full";
-		   else
-		   return "basic";
+	else
+	       return "basic";
         end
     end	
 	
     if IsKeyLockOn(mode_switch_key) then
         if IsKeyLockOn(full_mode_key) and full_mode then
-		   return "fullof4x"
-		   else
-		   return "quadruple"
+	       return "fullof4x"
+	else
+	       return "quadruple"
         end 
     end		
 end
@@ -323,6 +318,8 @@ function OnEvent(event, arg)
     OutputLogMessage("event = %s, arg = %d\n", event, arg)
     if (event == "PROFILE_ACTIVATED") then
         EnablePrimaryMouseButtonEvents(true)
+	current_weapon = "none"
+        shoot_duration = 0.0
         if IsKeyLockOn(lighton_key) then
         PressAndReleaseKey(lighton_key)
         elseif IsKeyLockOn(full_mode_key) then
@@ -331,8 +328,6 @@ function OnEvent(event, arg)
         PressAndReleaseKey(mode_switch_key)
         end
     elseif event == "PROFILE_DEACTIVATED" then
-        current_weapon = "none"
-        shoot_duration = 0.0
         ReleaseKey(fire_key)
         ReleaseMouseButton(1)
     end
@@ -358,14 +353,6 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
     or (event == "G_PRESSED" and arg == scarl_gkey) then
         current_weapon = "scarl"
-    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1 ) then
-        -- button 1 : Shoot
-        if ((current_weapon == "none") or IsModifierPressed(ignore_key)) then
-            PressKey(fire_key)
-            repeat
-                Sleep(30)
-            until not IsMouseButtonPressed(1)
-            ReleaseKey(fire_key)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
         -- button 1 : Shoot
         if ((current_weapon == "none")) then
@@ -392,7 +379,7 @@ function OnEvent(event, arg)
                if shoot_duration > (intervals * bullets) + 100 then
                ReleaseKey(fire_key)
                PressAndReleaseKey("r")
-               Sleep(500)
+               Sleep(200)
                end
             end
             until not IsMouseButtonPressed(1)
@@ -409,7 +396,7 @@ function OnEvent(event, arg)
                if shoot_duration > (intervals * bullets) + 100 then
                ReleaseKey(fire_key)
                PressAndReleaseKey("r")
-               Sleep(500)
+               Sleep(200)
                end
             end
             until not IsMouseButtonPressed(1)
@@ -419,7 +406,8 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
-     while (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and IsModifierPressed(control_key) and IsModifierPressed(ignore_key) and fastloot) do
+
+    while (event == "MOUSE_BUTTON_PRESSED" and arg == 1 and IsModifierPressed(control_key) and IsModifierPressed(ignore_key) and fastloot) do
         ReleaseMouseButton(1)
         PressMouseButton(1)
         for i = 0, 14 do
