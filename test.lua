@@ -402,7 +402,7 @@ function OnEvent(event, arg)
             until not IsMouseButtonPressed(1)
             ReleaseKey(fire_key)
         end
-        end
+
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
