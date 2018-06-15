@@ -1,5 +1,13 @@
 ## Change Log
 
+2018.6.15
+
+```
+remove fire_key, it's no need to change fire key in game.
+
+```
+
+
 2018.6.6
 
 ```
@@ -77,7 +85,6 @@ I think you can understand this pic
 - copy and paste script from [adv_mode.lua](https://raw.githubusercontent.com/liantian-cn/logitech-pubg/master/adv_mode.lua) to script box.
 - Ctrl + S to save.
 
-
 # How to Edit Setting
   
 ## 1. Assign buttons to weapon
@@ -86,22 +93,19 @@ I think you can understand this pic
 - there are 6 weapon types. if you have a logitech mouse with less than 6 buttons, map unused buttons/weapons to `nil`.
 - You should always assign a button to cancel the recoil macro. `set_off_key`
  
+## 2. Set the mode switch key. 
 
-## 2. Set the fire key and the mode switch key. 
-
-- unset the `Fire` binding in game from your mouse left button, and set it to `F8` key. This needs to be consistent between the script and the game setting.
 - When the `mode switch key` is pressed, recoil is magnified by  3-4x, consistent with 4x scope mode.
-- By default in the script , `fire key` is `F8` ,  `mode switch key` is `capslock`.
-- **always keep your weapons in single-fire mode. The script will automatically fire in auto mode, including M16A1s**
+
+- **m16a4 is single-fire mode , else in auto mode.
 
 ![](https://github.com/minglich/logitech-pubg/blob/master/img/123.png)
-
 
 ## 3. Ignore Key (script pause)
 
 - You can set a ignore Key, and when the key is pressed, the script pauses.
 - Limited by LGS, you can only select "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" and Logitech G Key(Logitech game keyboard only)
-- By default the ignore key is "lshift" 
+- By default the ignore key is "lalt" 
 
 ## 4. Sensitivity Setting 
 
@@ -110,27 +114,7 @@ I think you can understand this pic
 
 ![](https://github.com/minglich/logitech-pubg/blob/master/img/201856.jpg)
 
-## 5. Obfs Setting
-
-- by default, shoot interval random between 30-39ms. You can modify script variables to change this behavior.
-
-- When `weapon_speed_mode = true`, shots will be fired the same rate as weapon base rate, instead of the above random interval.
-
-## 6. You should always use Ctrl + S to save script after edit script. 
-
-
-# Recommended settings
-
-
-Logitech's most gaming mice contain 5 shortcuts. The default 1 forward, 1 back, 1 zoom, a reduced dpi, a magnifying glass.
-
-- Assign a button to use ump9, so that the keys are also suitable for full accessory m416 and scar-l.
-- Assign a button to use m16a1, m16a1 with red dot sight or holographic sight, do not need other accessories, you can play a power.
-- Assign a button using akm, akm mode also applies to sks and mini 14.
-- Assign a button to use a big jump.
-- Assign a button  to cancel the no-recoil.
-
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
+## 5. You should always use Ctrl + S to save script after edit script. 
 
 
 # Not working?
@@ -203,21 +187,17 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 - 总是应该为取消设置后座力补偿分配一个按键。`set_off_key`
 
 
-## 2.  设置开火按键和模式切换按键
+## 2.  模式切换按键
 
-- 开火`fire key`按键需要和游戏内设置一致，并在游戏内取消鼠标左键的绑定。
 - 模式切换键`mode switch key`按下时，后座力放大3~4倍，便于使用四倍镜。
-- 默认情况，开火键是"F8"，方向键上方最右一个。使用大小写锁定键切换4倍模式。
-- 所有武器使用单发模式，这个脚本会将单发转化为全自动模式，包括M16a1
-
-![](https://github.com/minglich/logitech-pubg/blob/master/img/123.png)
-
+- 使用大小写锁定键切换4倍模式。
+- M16a1使用单发模式，其他全自动模式
 
 ## 3. 忽略键
 
 - 您可以设置一个忽略键，当按下该键时，脚本会暂停。
 - 受限于LGS，你只能选择这些按键作为忽略键： "lalt", "ralt", "alt" "lshift", "rshift", "shift" "lctrl", "rctrl", "ctrl" 
-- 默认设置是 "lshift" 
+- 默认设置是 "lalt" 
 
 ## 4. 灵敏度设置 
 
@@ -226,28 +206,7 @@ By default ， LGS will only run profile when game's window is "active", use [Ge
 
 ![](https://github.com/minglich/logitech-pubg/blob/master/img/201856.jpg)
 
-## 5. 混淆设置
-
-- 在默认模式下，射击间隔从30ms到39ms随机变化。 可以修改几个变量来更改此随机范围。
-
-- 当 `weapon_speed_mode = ture`, 使用武器速度做基准，而不是默认的30ms.
-
-
-## 6.编辑脚本后记得ctrl + s保存。
-
-#  推荐设置
-
-罗技的大多数游戏鼠标包含5个快捷键。默认1个前进、1个后退、1个放大dpi，一个缩小dpi，一个放大镜。
-
-- 分配一个按键使用ump9，这样按键同时也适合全配件的m416和scar-l.
-- 分配一个按键使用m16a1, m16a1搭配红点瞄准镜或全息瞄准镜，不需要其他配件，就可以发挥威力。
-- 分配一个按键使用akm，akm的模式同样适用于sks和mini 14.
-- 分配一个按键使用大跳。
-- 分配一个给取消后座力补偿。
-
-
-![](https://github.com/liantian-cn/logitech-pubg/raw/master/img/20171014153403.png)
-
+## 5.编辑脚本后记得ctrl + s保存。
 
 # 常见问题 ? 
 
@@ -263,8 +222,6 @@ UAC会隔离user权限的user32.dll对管理员权限的进程访问.  [keybd_e
 
 ### 设置 "当游戏正在运行时锁定配置" ###
 默认的，LGS只对当前的活动窗口生效。[GetActiveWindow](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646292(v=vs.85).aspx) ,在Win10中，活动窗口可能被输入法或者提醒功能抢占。
-
-
 
 # 一些不无聊可以谈谈的问题
 
@@ -350,7 +307,6 @@ A： 很难想象，这是一个商业性的问题，而不是技术问题。
 
 A: 抱歉，没精力，懒。
 
-
 ## Q8: 推荐作弊器么 ##
 
 A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大保健。
@@ -358,8 +314,4 @@ A: 外挂那么贵，吃鸡封号成本那么高，有钱想爽，不如去大�
 
 # 版权说明 
 
-- 使用[The Unlicense](https://github.com/liantian-cn/logitech-pubg/blob/master/LICENSE "The Unlicense")授权，允许任意使用。（拿去卖也不介意，但麻烦自行售后）
-- 不提供任何服务，功能性建议可以在[Issues](https://github.com/liantian-cn/logitech-pubg/issues?q= "Issues")提出。
-
-
-
+- 不提供任何服务。
