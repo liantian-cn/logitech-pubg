@@ -4,6 +4,7 @@
 
 ```
 remove fire_key, it's no need to change fire key in game.
+移除了开火键，现在不需要修改游戏中的开火键了。
 
 ```
 
@@ -16,8 +17,6 @@ remove fire_key, it's no need to change fire key in game.
 2.upload weaponspeed_mode.lua , it will be more fluent than adv_mode.lua. 
 
 3.fix some recoil.
-
-something i want tell you:
 
 you can modify the basictimes to reduce or increase the recoil.
 for example: 
@@ -98,8 +97,6 @@ I think you can understand this pic
 - When the `mode switch key` is pressed, recoil is magnified by  3-4x, consistent with 4x scope mode.
 
 - **m16a4 is single-fire mode , else in auto mode.
-
-![](https://github.com/minglich/logitech-pubg/blob/master/img/123.png)
 
 ## 3. Ignore Key (script pause)
 
