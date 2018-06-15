@@ -382,7 +382,7 @@ function OnEvent(event, arg)
             shoot_duration = shoot_duration + (intervals/10)
             if auto_reloading then
                if shoot_duration > (intervals * bullets) + 100 then
-               ReleaseKey(fire_key)
+               ReleaseMouseButton(1)
                PressAndReleaseKey("r")
                Sleep(200)
                end
