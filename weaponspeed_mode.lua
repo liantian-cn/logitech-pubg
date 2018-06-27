@@ -63,8 +63,11 @@ local obfs_mode = false
 local interval_ratio = 0.75
 local random_seed = 1
 
-local auto_reloading = true
+local auto_reloading = false
 
+-- if auto_mode = true ,the guns need to switch automatic shooting mode,except m16 single.
+
+local auto_mode = true
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
 ---------------- You can fix the value here ------------------------------
@@ -76,8 +79,8 @@ local all_recoil_times = 1
 local recoil_table = {}
 
 recoil_table["akm"] = {
-    basic={56,41,42,46,48, 58,58.5,62,64,67, 68,71,70,74.4,77, 74},
-    basictimes = 1.04,
+    basic={56,41,42,46,48, 58,58.5,62,64,67, 68,71,72,74.4,77, 72.5},
+    basictimes = 1.09,
     full={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 74},
     fulltimes = 1.04*0.75,
     quadruple={56,41,42,46,48, 58,58.5,64,68,68, 70,71,70,74.4,77, 74},
@@ -91,13 +94,13 @@ recoil_table["akm"] = {
 }
 
 recoil_table["m416"] = {
-    basic={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},	
-    basictimes = 1.08,
-    full={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    basic={43,30,34,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 54,54,54,54,55, 56,56,56,56,56, 57,57,57,57,57},	
+    basictimes = 1.115,
+    full={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 55,55,55,55,55, 56,56,56,56,56, 57,57,57,57,57},
     fulltimes = 1.08*0.75,	
-    quadruple={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    quadruple={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 55,55,55,55,55, 56,56,56,56,56, 57,57,57,57,57},
     quadrupletimes = 4*1.08*0.9,
-    fullof4x={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 53},
+    fullof4x={41,30,33,36,41, 40,46,47,45.6,46.5, 47.5,46.5,49.2,52.2,53.1, 55,55,55,55,55, 56,56,56,56,56, 57,57,57,57,57},
     fullof4xtimes = 4*1.08*0.75,
     speed = 89.98,
     maxbullets = 40,
@@ -106,13 +109,13 @@ recoil_table["m416"] = {
 }
 
 recoil_table["scarl"] = {
-    basic={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
-    basictimes = 1,
-    full={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
+    basic={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54.5,53.2,55, 59},
+    basictimes = 1.19,
+    full={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 57},
     fulltimes = 1*0.75,
-    quadruple={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
+    quadruple={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 57},
     quadrupletimes = 4*1,
-    fullof4x={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 55},
+    fullof4x={40,25,31.5,39.6,39.6, 41.4,42.3,42.3,43.2,48.6, 50.4,52.2,54,52.2,55, 57},
     fullof4xtimes = 4*1*0.75,
     speed = 96,
     maxbullets = 40,
@@ -136,8 +139,9 @@ recoil_table["ump9"] = {
 }
 
 recoil_table["uzi"] = { 
-    basic={8.5,8.5,9,9,9,10.5,10.5,10.5,12,13,13,14.5,15.5,16,17.5,18.5,19,19.5,19,19.5,19,19,19.5,20},
-    basictimes = 2,
+    basic={21.8,19.5,19.5,20.0,20.6, 24.8,25.7,27.2,30.9,33.3, 36.9,38.6,40.0,43.6,42.0,
+           47},
+    basictimes = 0.95,
     full={4.8,4.8,5,5,5,6,6,6,6.2,6.8,6.8,7.6,7.6,7.9,8.2,8.2,8.2,8.7,8.7,9,9.5,9.5,9.6,9.6},
     fulltimes = 2,
     quadruple={8.5,8.5,9,9,9,10.5,10.5,10.5,12,13,13,14.5,15.5,16,17.5,18.5,19,19.5,19,19.5,19,19,19.5,20},
@@ -216,7 +220,11 @@ function recoil_mode()
         end 
     end		
 end
-		   
+
+function single_value(value)
+    return 10 * math.floor(( value / 10 ) + 0.9)
+    end
+
 function recoil_value(_weapon,_duration)
     local _mode = recoil_mode()
     local step = (math.floor(_duration/recoil_table[_weapon]["speed"])) + 1
@@ -285,19 +293,6 @@ function recoil_value(_weapon,_duration)
     return weapon_intervals,recoil_recovery,weapon_clicktime,weapon_bullets
 end
 
-function light_off()
-    if IsKeyLockOn(lighton_key) then
-        PressAndReleaseKey(control_key)
-        PressAndReleaseKey(lighton_key)
-    end 
-end
-function light_on()
-    if not IsKeyLockOn(lighton_key) then
-        PressAndReleaseKey(control_key)
-        PressAndReleaseKey(lighton_key)
-    end
-end
-
 --------------------------------------------------------------------------
 ----------------          OnEvent          ------------------------------
 --------------------------------------------------------------------------
@@ -323,35 +318,35 @@ function OnEvent(event, arg)
 
     if (event == "MOUSE_BUTTON_PRESSED" and arg == set_off_key) 
     or (event == "G_PRESSED" and arg == set_off_gkey) then
-        current_weapon = "none" light_off()
+        current_weapon = "none" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == akm_key)
     or (event == "G_PRESSED" and arg == akm_gkey) then
-        current_weapon = "akm" light_on()
+        current_weapon = "akm" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m16a4_key)
     or (event == "G_PRESSED" and arg == m16a4_gkey) then
-        current_weapon = "m16a4" light_on()
+        current_weapon = "m16a4" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == m416_key)
     or (event == "G_PRESSED" and arg == m416_gkey) then
-        current_weapon = "m416" light_on()
+        current_weapon = "m416" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == ump9_key)
     or (event == "G_PRESSED" and arg == ump9_gkey) then
-        current_weapon = "ump9" light_on()
+        current_weapon = "ump9" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == uzi_key)
     or (event == "G_PRESSED" and arg == uzi_gkey) then
-        current_weapon = "uzi" light_on()
+        current_weapon = "uzi" 
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
     or (event == "G_PRESSED" and arg == scarl_gkey) then
-        current_weapon = "scarl" light_on()
+        current_weapon = "scarl" 
     elseif (event == "M_RELEASED" and arg == 3 and Fire) then
         local intervals,recovery,clicktime,bullets = recoil_value(current_weapon,shoot_duration)
-        if shoot_duration % clicktime == 0 then
+        if shoot_duration % (single_value(intervals) / 2) == 0 then
             PressAndReleaseMouseButton(1)
         end 
         MoveMouseRelative(0, recovery / 10)
-        Sleep(intervals/10)
-        shoot_duration = shoot_duration + (intervals/10)
+        Sleep(single_value(intervals)/10)
+        shoot_duration = shoot_duration + (single_value(intervals)/10)
         if auto_reloading then
-            if shoot_duration > (intervals * bullets) + 100 then
+            if shoot_duration > (single_value(intervals) * bullets) + 100 then
             ReleaseMouseButton(1)
             PressAndReleaseKey("r")
             Sleep(200)
@@ -375,6 +370,7 @@ function OnEvent(event, arg)
             Fire = true
             SetMKeyState(3)
         else
+            if auto_mode then
             repeat
             local intervals,recovery,clicktime,bullets = recoil_value(current_weapon,shoot_duration)
             MoveMouseRelative(0, recovery /10 )
@@ -388,6 +384,10 @@ function OnEvent(event, arg)
                end
             end
             until not IsMouseButtonPressed(1)
+            else
+            Fire = true
+            SetMKeyState(3)
+            end
         end
     elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         Fire = false
@@ -407,5 +407,14 @@ function OnEvent(event, arg)
         Sleep(2)
         end
         Sleep(10)          
+    end
+    if (current_weapon == "none") then
+        if IsKeyLockOn(lighton_key) then
+        PressAndReleaseKey(lighton_key)
+        end 
+    else
+        if not IsKeyLockOn(lighton_key) then
+        PressAndReleaseKey(lighton_key)
+        end
     end
 end
