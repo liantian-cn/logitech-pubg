@@ -8,8 +8,9 @@ local ump9_key = nil
 local akm_key = 5
 local m16a4_key = 7
 local m416_key = 8
-local scarl_key = 4
+local scarl_key = nil
 local uzi_key = nil
+local qbz_key = 4
 local set_off_key = 6
 
 ---- keyboard ---- Only Support logitech G Keyboard
@@ -18,8 +19,9 @@ local ump9_gkey = 1  ---1 is use F1.
 local akm_gkey = nil
 local m16a4_gkey = nil
 local m416_gkey = nil
-local scarl_gkey = nil
+local scarl_gkey = 3
 local uzi_gkey = 2
+local qbz_gkey = nil
 local set_off_gkey = nil
 
 ---- control_key ----
@@ -79,7 +81,7 @@ local all_recoil_times = 1
 local recoil_table = {}
 
 recoil_table["akm"] = {
-    basic={61.3,41.2,47.5,51.0,54.5, 64.0,67.5,69.0,70.5,71.9, 71.5,73.6,79.3,79.3,81.6 ,80},
+    basic={60.3,40.2,47.5,51.0,54.5, 64.0,67.5,69.0,70.5,71.9, 71.5,73.6,79.3,79.3,81.6 ,70},
     basictimes = 1,
     full={61.3,41.2,47.5,51.0,54.5, 64.0,67.5,69.0,70.5,71.9, 71.5,73.6,79.3,79.3,81.6 ,80},
     fulltimes = 1*0.75,
@@ -118,6 +120,21 @@ recoil_table["scarl"] = {
     fullof4x={56.0,26.0,32.0,40.0,45.1, 48.9,51.0,54.2,59.8,60.4, 60.9,60.9,58.9,56.9,59.8, 60.5},
     fullof4xtimes = 4*1*0.75,
     speed = 100,
+    maxbullets = 40,
+    holdbreathtimes = 1.25,
+    fullholdbreathtimes = 1.25,	
+}
+
+recoil_table["qbz"] = {
+    basic={52.0,25.0,28.7,38.2,42.4, 44.0,46.0,46.0,45.6,45.1, 48.0,51.3,52.0,54.0,56.0, 59},
+    basictimes = 1.05,
+    full={51.2,24.5,28.7,38.2,42.4, 43.3,45.2,45.2,45.6,45.1, 48.0,50.3,51.0,53.0,55.0},
+    fulltimes = 1*0.75,
+    quadruple={51.2,24.5,28.7,38.2,42.4, 43.3,45.2,45.2,45.6,45.1, 48.0,50.3,51.0,53.0,55.0},
+    quadrupletimes = 4*1,
+    fullof4x={51.2,24.5,28.7,38.2,42.4, 43.3,45.2,45.2,45.6,45.1, 48.0,50.3,51.0,53.0,55.0},
+    fullof4xtimes = 4*1*0.75,
+    speed = 90,
     maxbullets = 40,
     holdbreathtimes = 1.25,
     fullholdbreathtimes = 1.25,	
@@ -336,6 +353,10 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == scarl_key)
     or (event == "G_PRESSED" and arg == scarl_gkey) then
         current_weapon = "scarl" 
+    elseif (event == "MOUSE_BUTTON_PRESSED" and arg == qbz_key)
+    or (event == "G_PRESSED" and arg == qbz_gkey) then
+        current_weapon = "qbz" 
+		
     elseif (event == "M_RELEASED" and arg == 3 and Fire) then
         local intervals,recovery,clicktime,bullets = recoil_value(current_weapon,shoot_duration)
         if shoot_duration % (single_value(intervals) / 2) == 0 then
