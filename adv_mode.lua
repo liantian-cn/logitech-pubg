@@ -13,7 +13,7 @@ local current_weapon = "none"
 local ump9_key = 8
 local akm_key = nil
 local m16a4_key = 5
-local m416_key = 7
+local m416_key = nil
 local scarl_key = nil
 local uzi_key = nil
 
@@ -34,16 +34,17 @@ local ignore_key = "lshift"
 --- Sensitivity in Game
 --- default is 50.0
 
-local target_sensitivity = 50.0
-local scope_sensitivity = 50.0
-local scope4x_sensitivity = 50.0
+local target_sensitivity = 50
+local scope_sensitivity = 50
+local scope4x_sensitivity = 50
 
----- Shooting delay setting
+---- Obfs setting
 ---- Two firing time intervals = weapon_speed * interval_ratio * ( 1 + random_seed * ( 0 ~ 1))
 local weapon_speed_mode = false
+-- local obfs_mode = false
 local obfs_mode = true
-local interval_ratio = 1
-local random_seed = 0.3
+local interval_ratio = 0.75
+local random_seed = 1
 
 --------------------------------------------------------------------------
 ----------------        Recoil Table        ------------------------------
@@ -53,7 +54,7 @@ local random_seed = 0.3
 local recoil_table = {}
 
 recoil_table["ump9"] = {
-    basic={18.3,18.3,18.3,18.3,18.3,18.3,18.3,23,23,23,23,23.7,23.7,23.7,23.7,23.7,23.7,23.7,23.7,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3},
+    basic={18,19,18,19,18,19,19,21,23,24,23,24,23,24,23,24,23,24,23,24,23,24,24,25,24,25,24,25,24,25,24,25,25,26,25,26,25,26,25,26,25,26,25,26,25,26},
     quadruple={83.3,83.3,83.3,83.3,83.3,83.3,83.3,116.7,116.7,116.7,116.7,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3,93.3},
     speed = 92
 }
@@ -65,25 +66,25 @@ recoil_table["akm"] = {
 }
 
 recoil_table["m16a4"] = {
-    basic={25.7,25.7,25.7,25.7,25.7,25.7,46.7,46.7,46.7,46.7,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30},
-    quadruple={86.7,86.7,86.7,86.7,86.7,86.7,86.7,150,150,150,150,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7},
+    basic={25,25,25,29,33,33,32,33,32,32,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30},
+    quadruple={86.7,86.7,86.7,86.7,86.7,86.7,86.7,150,150,150,150,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120},
     speed = 75
 }
 
 recoil_table["m416"] = {
-    basic={26.7,26.7,26.7,26.7,26.7,26.7,37,37,37,37,37,31,31,31,31,31,32,32,32,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35},
+    basic={21,21,21,21,21,21,21,21,21,23,23,24,23,24,25,25,26,27,27,32,31,31,31,31,31,31,31,32,32,32,35,35,35,35,35,35,35,35,35,35,35},
     quadruple={86.7,86.7,86.7,86.7,86.7,86.7,86.7,150,150,150,150,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7},
     speed = 86
 }
 
 recoil_table["scarl"] = {
-    basic={22.3,22.3,22.3,22.3,22.3,22.3,22.3,29.3,29.3,29.3,29.3,26.7,26.7,26.7,26.7,26.7,26.7,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26,26},
+    basic={20,21,22,21,22,22,23,22,23,23,24,24,25,25,25,25,26,27,28,29,30,32,34,34,35,34,35,34,35,34,35,34,34,34,34,34,35,35,35,35,35,35,35,35,35,35},
     quadruple={86.7,86.7,86.7,86.7,86.7,86.7,86.7,150,150,150,150,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7,96.7},
     speed = 96
 }
 
 recoil_table["uzi"] = {
-    basic={18.3,18.3,18.3,18.3,18.3,18.3,18.3,23,23,23,23,23.7,23.7,23.7,23.7,23.7,23.7,23.7,23.7,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3,23.3},
+    basic={16,17,18,20,21,22,23,24,25,26,28,30,32,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34},
     quadruple={13.3,13.3,13.3,13.3,13.3,21.7,21.7,21.7,21.7,21.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7,46.7},
     speed = 48
 }
@@ -99,11 +100,24 @@ recoil_table["none"] = {
 ----------------          Function          ------------------------------
 --------------------------------------------------------------------------
 
+
+function convert_sens(unconvertedSens) 
+    return 0.002 * math.pow(10, unconvertedSens / 50)
+end
+
+function calc_sens_scale(sensitivity)
+    return convert_sens(sensitivity)/convert_sens(50)
+end
+
+local target_scale = calc_sens_scale(target_sensitivity)
+local scope_scale = calc_sens_scale(scope_sensitivity)
+local scope4x_scale = calc_sens_scale(scope4x_sensitivity)
+
 function recoil_mode()
     if IsKeyLockOn(mode_switch_key) then
-        return "quadruple"
+        return "quadruple";
     else
-        return "basic"
+        return "basic";
     end
 end
 
@@ -119,7 +133,7 @@ function recoil_value(_weapon,_duration)
     
     local weapon_speed = 30
     if weapon_speed_mode then
-        local weapon_speed = recoil_table[_weapon]["speed"]
+        weapon_speed = recoil_table[_weapon]["speed"]
     end
     -- OutputLogMessage("weapon_speed = %s\n", weapon_speed)
 
@@ -135,11 +149,11 @@ function recoil_value(_weapon,_duration)
     
     -- issues/3
     if IsMouseButtonPressed(2) then
-        recoil_recovery = recoil_recovery / (target_sensitivity / 50.0)
+        recoil_recovery = recoil_recovery / target_scale
     elseif recoil_mode() == "basic" then
-        recoil_recovery = recoil_recovery / (scope_sensitivity / 50.0)
+        recoil_recovery = recoil_recovery / scope_scale
     elseif recoil_mode() == "quadruple" then
-        recoil_recovery= recoil_recovery / (scope4x_sensitivity / 50.0)
+        recoil_recovery= recoil_recovery / scope4x_scale
     end
 
     return weapon_intervals,recoil_recovery
@@ -194,7 +208,7 @@ function OnEvent(event, arg)
                 shoot_duration = shoot_duration + intervals
             until not IsMouseButtonPressed(1)
         end
-    elseif (event == "“MOUSE_BUTTON_RELEASED”" and arg == 1) then
+    elseif (event == "MOUSE_BUTTON_RELEASED" and arg == 1) then
         ReleaseKey(fire_key)
     end
 
